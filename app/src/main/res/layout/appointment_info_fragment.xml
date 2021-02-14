@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/alert_info_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="5dp"
+            android:text="Randevu talebiniz onaya gönderilmiştir. Eğer uzmanınınız randevunuzu onaylarsa randevularım kısmından ödeme yapabilirsiniz iyi günler."
+            android:textAlignment="center"
+            android:textColor="@color/darkColor"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <ImageView
+            android:id="@+id/ImageView_alert_info"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_below="@id/alert_info_textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_check_mark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alert_info_textView">
+
+        </ImageView>
+
+        <ProgressBar
+            android:id="@+id/progressBar_info_alert"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/alert_info_textView"
+            app:layout_constraintVertical_bias="0.338">
+
+        </ProgressBar>
+
+        <Button
+            android:id="@+id/btn_info_alert_ok"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button4"
+            android:text="Tamam"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/barColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageView_alert_info" >
+
+        </Button>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

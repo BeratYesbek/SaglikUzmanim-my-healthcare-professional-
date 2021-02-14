@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <FrameLayout
+        android:id="@+id/framelayout_for_user"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:background="@android:color/black"
+        >
+
+         <VideoView
+             android:id="@+id/videoView_for_user"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+             android:layout_gravity="center_horizontal"
+             ></VideoView>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/textView_videoView_info_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/whitecolor"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        ></TextView>
+    <Button
+        android:id="@+id/btn_showVide_for_user_dismiss"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_button4"
+        android:text="Kapat"
+        android:layout_below="@id/framelayout_for_user"
+        >
+    </Button>
+    <ProgressBar
+        android:id="@+id/progressBar_showVideo_for_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        ></ProgressBar>
+
+</RelativeLayout>

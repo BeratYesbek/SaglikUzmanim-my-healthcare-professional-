@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#fff"
+    tools:context=".ui.main.ProfileFragment">
+    <Button
+        android:id="@+id/btn_display_expert_profile_go_to_back"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/ic_arrow_back_blue"
+        >
+
+    </Button>
+    <RelativeLayout
+        android:id="@+id/relativeLayout_top"
+        android:layout_width="wrap_content"
+        android:background="@drawable/custom_border_buttom"
+        android:layout_below="@id/btn_display_expert_profile_go_to_back"
+
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView_display_expert_profile_to_user"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="@color/barColor"
+            app:civ_border_width="2dp"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textView_display_expert_firstAndLastName_to_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="TextView"
+            android:textColor="#000"
+            android:textSize="14dp"
+            android:maxLength="20"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imageView_display_expert_profile_to_user"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_display_showMore_profile_to_user"
+            android:layout_centerHorizontal="true"
+            >
+
+            <Button
+                android:id="@+id/btn_display_show_video_expert_to_user"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/custom_button2"
+                android:text="Videosunu gör"></Button>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView_display_expert_about_to_user"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="-2dp"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_below="@id/textView_about_text"
+            android:textColor="#000"
+            android:textDirection="inherit"
+            android:textSize="15dp" />
+
+
+
+        <TextView
+            android:id="@+id/text_display_appointment_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_display_expert_department_to_user"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/imageView_display_expert_profile_to_user"
+            android:text="Randevu ücreti">
+
+        </TextView>
+        <TextView
+            android:id="@+id/textView_display_appointment_price_to_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_display_appointment_price_text"
+            android:layout_toEndOf="@id/imageView_display_expert_profile_to_user"
+            android:padding="5dp"
+            android:textColor="@android:color/black"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_display_expert_department_to_user"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/textView_dipslay_department_text_to_user"
+            android:layout_toEndOf="@id/imageView_display_expert_profile_to_user"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+
+            android:text="TextView"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textView_display_showMore_profile_to_user"
+            android:layout_width="106dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="3dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:text="Devamını gör.."
+            android:textAlignment="gravity"
+            android:layout_below="@id/textView_display_expert_about_to_user"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_dipslay_department_text_to_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Departman"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/imageView_display_expert_profile_to_user"
+            android:layout_below="@id/textView_display_expert_firstAndLastName_to_user"
+            />
+
+        <TextView
+            android:id="@+id/textView_about_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:paddingLeft="5dp"
+            android:layout_margin="5dp"
+            android:text="Hakkında"
+            android:layout_below="@+id/imageView_display_expert_profile_to_user"
+            />
+
+
+        <ImageView
+            android:id="@+id/imageView_display_check_expert_to_user"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/ic_check_circle"
+            android:layout_toEndOf="@id/textView_display_expert_firstAndLastName_to_user"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/relativeLayout_top"
+        android:background="@drawable/custom_border_buttom"
+
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView_display_point_expert_to_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:layout_toEndOf="@+id/start_profile"
+            android:padding="5dp"
+            android:layout_marginTop="2dp"
+            android:textSize="18dp"
+            android:textColor="@color/darkColor"
+            ></TextView>
+
+        <ImageView
+            android:id="@+id/start_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_star"
+            android:layout_marginLeft="15dp"
+            ></ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YORUMLAR"
+            android:layout_toEndOf="@id/textView_display_point_expert_to_user"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:textColor="@color/darkColor"
+            >
+
+        </TextView>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout_bottom"
+        android:layout_marginTop="5dp"
+        android:background="#fff"
+
+        />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_display_expert_profile_to_user"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+</RelativeLayout>

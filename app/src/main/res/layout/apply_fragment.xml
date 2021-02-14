@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/apply_alert"
+    android:layout_gravity="center">
+
+       <RelativeLayout
+           android:id="@+id/relative3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/custom_card_view3"
+           android:layout_margin="10dp" >
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" android:layout_margin="8dp">
+
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uzman adı ve soyadı :"
+            android:textColor="@android:color/holo_blue_dark"
+            android:padding="5dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/alert_expert_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ertan Yeşbek"
+            android:padding="5dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/text_name"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_departmant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_name"
+            android:text="Uzmanlık: "
+            android:textColor="@android:color/holo_blue_dark"
+            android:padding="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/alert_departmant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_name"
+            android:text="fizyoterapist"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            android:layout_toEndOf="@+id/text_departmant"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/alert_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_departmant"
+            android:text="tarih: 27/12/2021"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/alert_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_departmant"
+            android:layout_toEndOf="@+id/alert_date"
+            android:text="saat : 15:15"
+            android:textColor="@android:color/black"
+            android:padding="5dp"
+            >
+        </TextView>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/alert_time"
+               android:text="Randevu talebi göndermek istediğinize emin misiniz ?"
+               android:textColor="@color/darkColor"
+               android:textSize="13dp"
+               android:padding="5dp"
+               android:layout_marginBottom="15dp"
+               android:textStyle="italic"
+               >
+
+           </TextView>
+           </RelativeLayout>
+
+
+       </RelativeLayout>
+    <RelativeLayout
+        android:gravity="center|bottom"
+        android:layout_marginTop="-30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/relative3"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_alert_cancel"
+            android:layout_width="155dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:textColor="@color/whitecolor"
+            android:text="İptal"
+            >
+        </Button>
+        <Button
+            android:id="@+id/btn_alert_send_appointment"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/btn_alert_cancel"
+            android:background="@drawable/custom_button2"
+            android:text="Onaya Gönder"
+            android:textColor="@color/whitecolor"
+            >
+
+        </Button>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

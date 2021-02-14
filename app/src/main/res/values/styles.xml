@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/barColor</item>
+        <item name="colorPrimaryDark">@color/whitecolor</item>
+        <item name="colorAccent">@color/barColor</item>
+    </style>
+
+    <style name="BaseAppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/barColor</item>
+        <item name="colorPrimaryDark">@color/barColor</item>
+        <item name="colorAccent">@color/barColor</item>
+    </style>
+
+
+    <style name="BaseAppThemeGray" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/whitecolor</item>
+        <item name="colorPrimaryDark">@color/whitecolor</item>
+        <item name="colorAccent">@color/whitecolor</item>
+    </style>
+
+    <style name="AppTheme2" parent="BaseAppTheme2">
+        <item name="android:windowNoTitle">true</item>
+        <item name="appBarLayoutStyle">@color/whitecolor</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/slide_right</item>
+        <item name="android:windowExitTransition">@android:transition/slide_left</item>
+    </style>
+
+    <style name="AppTheme1" parent="BaseAppTheme">
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fullBackupOnly">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges <!-- default, shortEdges, never --></item>
+
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+</resources>

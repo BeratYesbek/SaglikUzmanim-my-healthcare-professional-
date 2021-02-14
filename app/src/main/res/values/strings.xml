@@ -1,0 +1,56 @@
+<resources>
+
+
+    <string name="app_name" translatable="false">SAĞLIK UZMANIM </string>
+    <string name="title_activity_navigation_receiving_service" translatable="false">NavigationReceivingServiceActivity
+    </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profilim</string>
+    <string name="menu_message">Mesajlarım</string>
+    <string name="menu_list">İlanlarım</string>
+
+    <string-array name="choiceLocation">
+        <item>İstanbul</item>
+
+        <item>Ankara</item>
+
+        <item>İzmir</item>
+
+    </string-array>
+
+    <string-array name="choiceDoctorDepartmant">
+        <item>kalp damar cerrahi</item>
+        <item>beyin cerrahi</item>
+        <item>fizik tedavi</item>
+        <item>dahiliye</item>
+    </string-array>
+
+
+    <string-array name="choiceExpert">
+        <item>kalp damar cerrahi</item>
+        <item>beyin cerrahi</item>
+        <item>fizik tedavi</item>
+        <item>dahiliye</item>
+        <item>Diyetisyen</item>
+        <item>Fizyoterapist</item>
+        <item>Hemşire</item>
+    </string-array>
+
+
+    <string name="title_activity_fragment_for_export">FragmentActivityForExport</string>
+    <string name="tab_text_1">AnaSayfa</string>
+    <string name="tab_text_2">Randevular</string>
+    <string name="tab_text_3">Profilim</string>
+    <string name="title_activity_fragment_for_expert">FragmentActivityForExpert</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.salikuzmanim"
+    xmlns:dist="http://schemas.android.com/apk/distribution">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/ic_stat_onesignal_default"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_stat_onesignal_default"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme1">
+        <meta-data
+            android:name="com.onesignal.NotificationServiceExtension"
+            android:value="com.company.NotificationServiceExtension" />
+
+        <activity
+            android:name=".ui.main.messageActivityForExpert"
+            android:theme="@style/BaseAppTheme2"></activity>
+        <activity
+            android:name=".Activity.MessageActivity"
+            android:theme="@style/BaseAppThemeGray" />
+        <activity
+            android:name=".gridViewClickManager.ReyclerViewShowExpertForUserActivity"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".gridViewClickManager.ReyclerViewShowAddForExpertActivity" />
+        <activity android:name=".Activity.ShowAboutExpertActivity" />
+        <activity android:name=".Activity.ActivityExpert.profileEditActivityForExpert" />
+        <activity android:name=".Activity.ActivityUser.JobAdvertisementUpdateActivity" />
+        <activity android:name=".Activity.ActivityUser.profileEditActivityForUser" />
+        <activity android:name=".Activity.LoginReceivingServiceActivity" />
+        <activity android:name=".Activity.MainActivity2" />
+        <activity
+            android:name=".Activity.ActivityExpert.FragmentActivityForExpert"
+            android:label="@string/title_activity_fragment_for_expert"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Activity.ActivityUser.AdAddActivity" />
+
+        <activity
+            android:name=".Activity.ActivityUser.NavigationReceivingServiceActivity"
+            android:label="@string/title_activity_navigation_receiving_service"
+            android:theme="@style/AppTheme1" />
+        <activity android:name=".Activity.ActivityUser.SignUpReceivingServiceActivity" />
+        <activity android:name=".Activity.ActivityExpert.SignUpGiveServiceActivity" />
+        <activity android:name=".Activity.LoginGiveServiceActivity" />
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+
+</manifest>

@@ -1,0 +1,86 @@
+package com.example.salikuzmanim.Activity.ActivityExpert;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.salikuzmanim.Interfaces.SingleChoiceLister;
+import com.example.salikuzmanim.R;
+import com.example.salikuzmanim.ui.main.MainPageFragment;
+import com.example.salikuzmanim.ui.main.SectionsPagerAdapter;
+import com.example.salikuzmanim.ui.main.messageActivityForExpert;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+
+public class FragmentActivityForExpert extends AppCompatActivity implements SingleChoiceLister {
+    private String department;
+    
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fragment_for_expert);
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        Intent intent = getIntent();
+        department = intent.getStringExtra("department");
+        
+        
+
+        //startOneSignalManager(getApplicationContext());
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), messageActivityForExpert.class);
+                startActivity(intent);
+                /*
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                 */
+            }
+        });
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public FragmentManager getFragmentManager(FragmentActivity activity) {
+        return activity.getSupportFragmentManager();
+    }
+
+    private void startOneSignalManager(Context context) {
+        /*
+        try{
+            OneSignalManager oneSignalManager = new OneSignalManager();
+            oneSignalManager.startSignal(context);
+        }catch (Exception e){
+
+        }
+*/
+    }
+
+
+    @Override
+    public void onPossitiveButtonClicked(String[] list, int position, String whichList) {
+        String location = list[position];
+        MainPageFragment.setLocation(location);
+    }
+
+    @Override
+    public void onNegativeButtonClicked() {
+
+    }
+}

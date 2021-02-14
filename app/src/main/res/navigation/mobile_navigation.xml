@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.salikuzmanim.ui.homeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.salikuzmanim.ui.profileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile"
+        />
+    <fragment
+        android:id="@+id/nav_message"
+        android:name="com.example.salikuzmanim.ui.messageFragmentForUser"
+        android:label="@string/menu_message"
+        tools:layout="@layout/fragment_message_for_user" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.example.salikuzmanim.ui.listFragment"
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/nav_apponitment"
+        android:name="com.example.salikuzmanim.ui.appointment_for_user"
+        android:label="Randevu Taleblerim"
+        tools:layout="@layout/fragment_appointment_for_user"
+        />
+</navigation>

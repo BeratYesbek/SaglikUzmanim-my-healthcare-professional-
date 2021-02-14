@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/custom_card_view_6"
+    android:layout_margin="8dp"
+    android:elevation="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_adapter_appointment_for_expert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/custom_card_view7">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView_appointment_adapter_for_expert"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/ic_profile"
+
+                    >
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <TextView
+                    android:id="@+id/text_name_appointment_for_expert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/imageView_appointment_adapter_for_expert"
+                    android:maxLength="25"
+                    android:padding="5dp"
+                    android:text="Android studio"
+                    android:textColor="@android:color/black">
+
+                </TextView>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/text_date2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RelativeLayout_adapter_appointment_for_expert"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="Randevu Tarihi: "
+            android:textColor="@android:color/holo_blue_dark">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_appointment_date_for_expert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RelativeLayout_adapter_appointment_for_expert"
+            android:layout_toEndOf="@id/text_date2"
+            android:padding="5dp"
+            android:text="31-12-2000 12:15"
+            android:textColor="@android:color/black">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_send_date_appointment_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_date2"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+
+            android:text="Gönderilme Tarihi: "
+            android:textColor="@android:color/holo_blue_dark">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_send_date_appointment_for_expert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_date2"
+            android:layout_toEndOf="@id/textView_send_date_appointment_text2"
+            android:padding="5dp"
+            android:textColor="@color/darkColor">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_view_info_appointment_for_expert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kullanıcının size göndermiş olduğu randevu talebinize onay veya red vermeniz gerekmektedir"
+            android:layout_below="@+id/textView_appointment_price_for_expert"
+            android:textAlignment="center"
+            android:textColor="@color/darkColor"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_send_date_appointment_text2"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="Randevu Ücreti: "
+            android:textColor="@android:color/holo_blue_dark"
+
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_appointment_price_for_expert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_send_date_appointment_text2"
+            android:layout_toRightOf="@id/textView_price_text"
+            android:padding="5dp"
+            android:textColor="@color/darkColor"
+            android:textSize="16dp"
+            android:text="150 TL"
+
+            >
+
+        </TextView>
+
+        <!---
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ad Soyad:"
+                    android:textColor="@color/darkColor"
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_name_appointment_adapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Android studio"
+                    android:layout_toEndOf="@+id/text"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+
+
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/text_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:text="Randevu Tarihi:"
+                    android:textColor="@color/darkColor"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_adapter_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_toEndOf="@+id/text_date"
+                    android:text="28/12/2000 15:15"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/text_view_info_appointment_for_expert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kullanıcının size göndermiş olduğu randevu talebinize onay veya red vermeniz gerekmektedir"
+                    android:layout_below="@+id/textView_adapter_date"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkColor"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+
+                </TextView>
+                -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:layout_below="@id/text_view_info_appointment_for_expert">
+        <Button
+            android:id="@+id/btn_adapter_approve"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:textColor="#fff"
+            android:text="Talebi onayla"
+            android:elevation="10dp"
+            android:background="@drawable/custom_button2"
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/btn_adapter_dismiss"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/btn_adapter_approve"
+            android:background="@drawable/custom_button5"
+            android:elevation="10dp"
+            android:text="Talebi Reddet"
+
+
+            android:textColor="#fff">
+
+        </Button>
+            ></RelativeLayout>
+
+
+</RelativeLayout>

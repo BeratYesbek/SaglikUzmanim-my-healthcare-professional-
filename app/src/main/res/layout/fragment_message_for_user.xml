@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.messageFragmentForUser">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:background="@color/whitecolor"
+        android:layout_height="wrap_content">
+
+    </Toolbar>
+    <TextView
+        android:id="@+id/textView_info_messages_user_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/darkColor"
+        android:layout_below="@id/toolbar"
+        android:padding="5dp"
+        android:textSize="12dp"
+        ></TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerView_displayUser_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView_info_messages_user_list"
+        android:layoutAnimation="@anim/recycler_view_animation"
+        android:layout_marginTop="10dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar_message_fragment_for_user"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+    </ProgressBar>
+    <TextView
+        android:id="@+id/textView_message_fragmentUser_for_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Herhangi bir mesaj bulunmuyor."
+        android:textSize="20dp"
+        android:textColor="@color/darkColor"
+        >
+
+    </TextView>
+</RelativeLayout>

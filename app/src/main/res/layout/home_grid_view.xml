@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/custom_card_view2"
+    android:layout_margin="5dp"
+    android:elevation="10dp"
+  >
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/image_view_gridView"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Doktor"
+        android:textStyle="bold"
+
+        android:textAlignment="center"
+        android:textColor="#0AABFB"
+        android:textSize="18sp"
+         />
+
+
+
+</LinearLayout>

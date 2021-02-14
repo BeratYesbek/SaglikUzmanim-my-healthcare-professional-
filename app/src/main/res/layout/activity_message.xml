@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/BaseAppTheme2"
+    tools:context=".Activity.MessageActivity">
+
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/layout_custom_toolbar">
+
+    </include>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_message_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/custom_toolbar"
+        android:layout_marginBottom="50dp"
+        android:layoutAnimation="@anim/recycler_view_animation_bottom" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="10dp"
+
+        >
+
+        <EditText
+            android:id="@+id/editText_send_message"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/btn_send_message_activity"
+            android:background="@drawable/custom_input"
+            android:hint="Mesaj yaz"
+            android:inputType="textMultiLine"
+            android:padding="5dp"></EditText>
+
+        <Button
+            android:id="@+id/btn_send_message_activity"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="5dp"
+            android:background="@drawable/ic_send"
+            android:layout_centerVertical="true"
+            android:gravity="end"
+            android:onClick="sendMessage"></Button>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative2"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+
+        android:background="@drawable/custom_card_view_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/about_Text"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#fff"
+            android:padding="5dp"
+            android:text="Hakkında"
+            android:layout_marginTop="15dp"
+
+            android:textColor="@android:color/holo_red_dark"></TextView>
+
+        <TextView
+            android:id="@+id/textView_about_text_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_Text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/text_view_border3"
+           android:layout_marginBottom="15dp"
+            android:padding="5dp"></TextView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

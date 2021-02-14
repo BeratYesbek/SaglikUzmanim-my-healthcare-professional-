@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/custom_card_view_8"
+    android:elevation="8dp">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout_show_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/custom_card_view7">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_expert_profile_for_show"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/textView_expert_name5"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_toRightOf="@id/image_expert_profile_for_show"
+            android:maxLines="20"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:id="@+id/okey"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="11dp"
+            android:layout_toEndOf="@id/textView_expert_name5"
+            android:background="@drawable/ic_check_circle"></ImageView>
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/textView_expert_name5"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/image_expert_profile_for_show"
+            android:background="@drawable/ic_star">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/point_for_expert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_expert_name5"
+            android:layout_marginStart="1dp"
+            android:layout_toEndOf="@+id/star"
+            android:padding="3dp"
+            android:textAlignment="center"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textView_show_expert_departmant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_expert_name5"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/point_for_expert"
+            android:padding="3dp"
+            android:textColor="@color/barColor"
+            android:textSize="14dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout_show_expert2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RelativeLayout_show_expert"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/custom_card_view7"
+
+        >
+
+        <TextView
+            android:id="@+id/textView_expert_show_appointment_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="Randevu ücreti:"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="12dp"
+
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_expert_show_appointment_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textView_expert_show_appointment_price_text"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="14dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_about_text5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_expert_show_appointment_price_text"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:text="Hakkında"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14dp">
+
+        </TextView>
+
+
+        <TextView
+            android:id="@+id/textView_about_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_about_text5"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:textColor="@color/darkColor"
+            android:textSize="13dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_show_experts_see_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_about_text2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="profili gör >>"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="13dp"
+
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textView_show_experts_see_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_about_text2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="100dp"
+            android:text="Uzmanın videosunu gör >>"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="13dp"
+
+            >
+
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RelativeLayout_show_expert2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_send_message"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_button2"
+            android:drawableStart="@drawable/ic_message_2"
+            android:paddingLeft="7dp"
+            android:text="mesaj gönder"
+            android:textColor="#fff"
+            android:elevation="10dp"
+            android:textSize="12dp"
+
+            ></Button>
+
+        <Button
+            android:id="@+id/btn_appointment_demand"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@+id/btn_send_message"
+            android:background="@drawable/custom_button"
+            android:drawableStart="@drawable/ic_date"
+            android:paddingLeft="7dp"
+            android:text="randevu taleb et"
+            android:textColor="#fff"
+            android:elevation="10dp"
+            android:textSize="12dp"
+
+            ></Button>
+    </RelativeLayout>
+
+
+    <!--
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/point_for_expert"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="-24dp"
+            android:background="@drawable/ic_star">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/point_for_expert"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="175dp"
+            android:layout_toEndOf="@+id/star"
+            android:text="4.6"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_show_video_user"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/textView_expert_name5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_button2"
+            android:elevation="10dp"
+            android:text="TANITIM VİDEOSUNU GÖR"
+            android:textSize="11dp"></Button>
+
+        <TextView
+            android:id="@+id/textView_expert_name5"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@+id/image_expert_profile_for_show"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/point_for_expert"
+            android:maxLines="20"
+            android:padding="5dp"
+            android:text="Android Studio"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"></TextView>
+
+
+        <ImageView
+            android:id="@+id/okey"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/image_expert_profile_for_show"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="11dp"
+            android:layout_toEndOf="@+id/textView_expert_name5"
+            android:background="@drawable/ic_check_circle"></ImageView>
+
+        <TextView
+            android:id="@+id/textView_expert5"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/btn_show_video_user"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:paddingStart="15dp" />
+
+        <TextView
+            android:id="@+id/textView_about_text5"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@id/textView_expert5"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:text="Hakkında"
+            android:textColor="@android:color/holo_red_dark"></TextView>
+
+        <TextView
+            android:id="@+id/textView_about_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_about_text5"
+            android:layout_marginTop="7dp"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:textColor="@android:color/black"
+            android:textStyle="italic"></TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_about_text2"
+            android:layout_centerHorizontal="true"
+
+            >
+
+            <Button
+                android:id="@+id/btn_send_message"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_button2"
+                android:text="mesaj gönder"
+
+                ></Button>
+
+            <Button
+                android:id="@+id/btn_appointment_demand"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toEndOf="@+id/btn_send_message"
+                android:background="@drawable/custom_button"
+                android:text="randevu taleb et"
+
+                ></Button>
+
+        </RelativeLayout>
+    -->
+
+</RelativeLayout>

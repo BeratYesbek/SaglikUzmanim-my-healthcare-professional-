@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/barColor">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/barColor"> </solid>
+        </shape>
+    </item>
+
+    <item android:top="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#F3F3F3"/>
+        </shape>
+    </item>
+
+</ripple>

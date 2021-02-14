@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <TextView
+        android:id="@+id/textView_progressBar_text"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/darkColor"
+        android:text="%0.0"
+        android:textSize="25dp"
+        android:padding="5dp"
+        android:layout_height="40dp">
+    </TextView>
+    <TextView
+        android:id="@+id/textView_progressBar_info2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_progressBar_text"
+        android:textColor="@color/darkColor"
+        android:padding="5dp"
+        android:textAlignment="center"
+        ></TextView>
+    <ProgressBar
+        android:id="@+id/progressBar_send_uri"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_below="@+id/textView_progressBar_info2"
+        >
+
+    </ProgressBar>
+    <Button
+
+        android:id="@+id/btn_send_uri"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/progressBar_send_uri"
+        android:text="yükle"
+        android:background="@drawable/custom_button4"
+        >
+    </Button>
+
+</RelativeLayout>

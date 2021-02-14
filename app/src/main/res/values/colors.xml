@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkColor">#444444</color>
+    <color name="barColor">#00C8FF</color>
+    <color name="whitecolor">#EEEE</color>
+    <color name="editTextBackGround">#BFBBBB</color>
+    <color name="buttonColor">#00C8FF</color>
+    <color name = "greenColor">#02FF00</color>
+    <color name="greenColor2">#00df0b</color>
+
+
+</resources>
+
+

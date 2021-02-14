@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:theme="@style/BaseAppTheme2"
+    tools:context=".ui.messageFragmentForUser">
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/barColor"
+        android:elevation="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView_toolbar_activity_expert_show_list_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MESAJLAR"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            >
+        </TextView>
+
+    </Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerView_displayUser_messages2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_below="@+id/toolbar"
+        android:layoutAnimation="@anim/recycler_view_animation"
+        android:layout_marginTop="10dp"
+
+        />
+    <ProgressBar
+        android:id="@+id/progressBar_message_acitivity_for_expert"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+    </ProgressBar>
+    <TextView
+        android:id="@+id/textView_message_fragmentExpert_for_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Herhangi bir mesaj bulunmuyor."
+        android:textSize="20dp"
+        android:textColor="@color/darkColor"
+        >
+
+    </TextView>
+</RelativeLayout>

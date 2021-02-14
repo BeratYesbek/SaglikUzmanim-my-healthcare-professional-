@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/custom_card_view_6"
+    android:elevation="15dp">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout_adapter_appointment_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/custom_card_view7">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView_appointment_adapter_for_user"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_profile"
+
+            >
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <ImageView
+            android:id="@+id/imageView_check_expert_appointment_adapter_for_user"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/text_name_appointment_for_user"
+            android:src="@drawable/ic_check_circle"></ImageView>
+
+        <TextView
+            android:id="@+id/text_name_appointment_for_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/imageView_appointment_adapter_for_user"
+            android:maxLength="25"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Android studio"
+            android:textColor="@android:color/black"></TextView>
+        <TextView
+            android:id="@+id/textView_adapter_appointment_departmant_for_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_name_appointment_for_user"
+            android:layout_toRightOf="@id/imageView_appointment_adapter_for_user"
+            android:text="Doktor"
+            android:paddingLeft="5dp"
+            android:textSize="14dp"
+            android:textColor="@android:color/black"
+            >
+
+        </TextView>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/text_date2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RelativeLayout_adapter_appointment_for_user"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:text="Randevu Tarihi: "
+        android:textColor="@android:color/holo_blue_dark"></TextView>
+
+    <TextView
+        android:id="@+id/textView_appointment_date_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RelativeLayout_adapter_appointment_for_user"
+        android:layout_toEndOf="@id/text_date2"
+        android:padding="5dp"
+        android:text="31-12-2000 12:15"
+        android:textColor="@android:color/black"></TextView>
+
+    <TextView
+        android:id="@+id/textView_send_date_appointment_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_date2"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+
+        android:text="Gönderilme Tarihi: "
+        android:textColor="@android:color/holo_blue_dark">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_send_date_appointment_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_date2"
+        android:layout_toEndOf="@id/textView_send_date_appointment_text"
+        android:padding="5dp"
+        android:textColor="@color/darkColor">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_stuation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_send_date_appointment_for_user"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:text="Durum: "
+        android:textColor="@android:color/holo_blue_dark"></TextView>
+
+    <TextView
+        android:id="@+id/textView_appointment_info_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_send_date_appointment_for_user"
+        android:layout_toEndOf="@id/text_stuation"
+        android:padding="5dp"
+        android:text="Onay bekliyor..."
+        android:textColor="@color/darkColor"></TextView>
+
+    <TextView
+        android:id="@+id/textView_price_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_stuation"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:text="Randevu Ücreti: "
+        android:textColor="@android:color/holo_blue_dark"
+
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_appointment_price_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_stuation"
+        android:layout_toRightOf="@id/textView_price_text"
+        android:padding="5dp"
+        android:textColor="@color/darkColor"
+        android:textSize="16dp"
+        android:text="150 TL"
+
+        >
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_appointment_price_for_user"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btn_appointment_refuse_for_user"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button5"
+            android:elevation="20dp"
+            android:text="Iptal et"
+            android:textColor="@color/whitecolor">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_payment"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/btn_appointment_refuse_for_user"
+            android:background="@drawable/custom_button2"
+            android:elevation="20dp"
+            android:text="Ödeme yap"
+            android:textColor="@color/whitecolor"
+
+            ></Button>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Activity.ActivityUser.profileEditActivityForUser">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_edit_user"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="@color/barColor"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+
+    />
+<!--
+    <EditText
+        android:id="@+id/editText_FirstName_edit"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="12dp"
+        android:paddingLeft="7dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editText_lastName_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent" />
+-->
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        >
+        <RelativeLayout
+            android:id="@+id/relativeLayout_edit_user_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            >
+
+            <EditText
+                android:id="@+id/editText_FirstName_edit"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input2"
+                android:padding="5dp"
+                android:inputType="text"
+                android:hint="Adınız "
+                android:textSize="14dp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="#fff"
+                android:padding="5dp"
+                android:text="Adınız"
+                android:textColor="@color/darkColor"></TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout_edit_user_profile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout_edit_user_profile"
+            android:layout_marginLeft="30dp"
+           >
+
+            <EditText
+                android:id="@+id/editText_lastName_edit"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input2"
+                android:padding="5dp"
+                android:hint="Soyadınız  "
+                android:textSize="14dp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="#fff"
+                android:padding="5dp"
+                android:text="Soyadnız"
+                android:textColor="@color/darkColor"></TextView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_update_photo"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_button2"
+        android:onClick="SelectImage"
+        android:text="değiştir"
+        android:textColor="#fff"
+        android:textSize="14dp"
+        android:layout_below="@id/imageView_edit_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+/>
+
+    <Button
+        android:id="@+id/btn_update_profile"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btn_update_profile"
+        android:text="Güncelle"
+        android:layout_below="@id/relative_layout"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:textColor="#fff"
+ />
+
+    <ProgressBar
+        android:id="@+id/progressBar_edit_profile"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+     />
+
+</RelativeLayout>

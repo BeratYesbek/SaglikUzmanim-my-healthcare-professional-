@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gridViewClickManager.ReyclerViewShowAddForExpertActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_add_show_for_expert_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView_text"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:layoutAnimation="@anim/recycler_view_animation_fade_top" />
+
+    <Button
+        android:id="@+id/btn_filter_expert_main_fragment"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="@drawable/custom_button8"
+        android:drawableStart="@drawable/ic_filter_blue"
+        android:gravity="center"
+        android:elevation="20dp"
+        android:singleLine="true"
+        android:text="Konuma göre filtrele"
+        android:textColor="@color/barColor" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btn_filter_expert_main_fragment"
+        android:text="Hoşgeldiniz"
+        android:textSize="25dp"
+        android:layout_marginLeft="20dp"
+        android:padding="5dp"
+        android:textColor="@color/barColor"
+        android:textStyle="bold"
+
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/textView_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/btn_filter_expert_main_fragment"
+        android:padding="5dp"
+        android:background="@drawable/custom_text_view_3"
+        android:text="Size göre iş ilanları"
+        android:textColor="@color/darkColor"
+        android:textSize="16dp"
+        android:textStyle="bold"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/textView_for_show_add_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18dp"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/sad_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_for_show_add_activity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/sad">
+
+    </ImageView>
+    <ProgressBar
+        android:id="@+id/progressBar_display_jobAdvertisement"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+
+    </ProgressBar>
+
+</RelativeLayout>
+
+    <!--
+        <GridView
+            android:id="@+id/grid_view_expert"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:horizontalSpacing="20dp"
+            android:verticalSpacing="20dp"
+            android:listSelector="@android:color/transparent"
+            android:padding="16dp"
+            android:numColumns="2"
+            android:animationCache="false"
+            android:clipToPadding="false"/>
+            -->

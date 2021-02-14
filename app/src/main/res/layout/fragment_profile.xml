@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_expert_profile_for_add"
+        android:layout_width="168dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="@color/barColor"
+        app:civ_border_width="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+         />
+
+    <TextView
+        android:id="@+id/text_firstName_user"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/image_expert_profile_for_add"
+        android:layout_marginBottom="8dp"
+        android:text="FirstName"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="50dp"
+
+         />
+    <RelativeLayout
+        android:layout_width="415dp"
+        android:layout_height="735dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:padding="20dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar__sign_give_service"
+            android:layout_width="72dp"
+            android:layout_height="76dp"
+            android:layout_centerInParent="true">
+
+        </ProgressBar>
+
+        <TextView
+            android:id="@+id/message_profile"
+            android:layout_width="196dp"
+            android:layout_height="76dp"
+            android:layout_centerInParent="true"
+            android:translationZ="1dp"
+            >
+
+        </TextView>
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/text_lastName_user"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="12dp"
+        android:text="LastName"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+        android:layout_below="@id/text_firstName_user"
+        />
+
+    <TextView
+        android:id="@+id/text_Email_user"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="24dp"
+        android:text="saglikuzmanim@gmail.com"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_below="@id/text_lastName_user"
+        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+         />
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        android:layout_width="119dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="156dp"
+        android:background="@drawable/custom_button"
+        android:text="DÜZENLE"
+        android:layout_below="@id/text_Email_user"
+        android:layout_marginLeft="50dp"
+        />
+
+</RelativeLayout>

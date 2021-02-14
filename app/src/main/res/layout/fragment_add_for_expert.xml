@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="6dp"
+    android:background="@drawable/custom_card_view_8"
+
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_expert_profile_for_add"
+        android:layout_width="87dp"
+        android:layout_height="94dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:paddingLeft="10dp"
+        android:src="@drawable/ic_profile" />
+
+    <TextView
+        android:id="@+id/textView_add_title_for_expert"
+        android:layout_width="305dp"
+        android:layout_height="30dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="15dp"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/image_expert_profile_for_add"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView_explain_add_for_expert"
+        android:layout_width="321dp"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/textView_add_title_for_expert"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/image_expert_profile_for_add"
+        android:lines="2"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView_location_show_for_expert"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_show_detail"
+        android:layout_below="@+id/textView_explain_add_for_expert"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toEndOf="@+id/textView_first_and_last_name_add_for_expert"
+        android:padding="5dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/darkColor" />
+
+    <TextView
+        android:id="@+id/textView_expert_show_for_expert"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_explain_add_for_expert"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/textView_first_and_last_name_add_for_expert"
+        android:padding="5dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/darkColor" />
+
+    <TextView
+        android:id="@+id/textView_date_show_for_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_explain_add_for_expert"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/textView_first_and_last_name_add_for_expert"
+        android:padding="5dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/darkColor" />
+
+    <TextView
+        android:id="@+id/textView_first_and_last_name_add_for_expert"
+        android:layout_width="84dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/image_expert_profile_for_add"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:maxLength="15"
+        android:padding="4dp"
+        android:text="Berat muhammed yesbek"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="12dp" />
+
+    <Button
+        android:id="@+id/btn_show_detail"
+        android:layout_width="98dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/textView_first_and_last_name_add_for_expert"
+        android:layout_alignBottom="@+id/textView_date_show_for_expert"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="-1dp"
+        android:textSize="10dp"
+        android:background="@drawable/custom_button"
+        android:text="Detayları gör" />
+
+</RelativeLayout>
+
+
+</RelativeLayout>

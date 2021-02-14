@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whitecolor"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_message_activity_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_arrow_back"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+
+
+            >
+
+        </Button>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView_message_activity"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/btn_message_activity_back"
+            android:src="@drawable/profile"
+
+            >
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/textView_message_activity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/imageView_message_activity"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:text="Android studio"
+            android:textStyle="bold"
+            android:textColor="@color/darkColor"
+            android:textSize="15dp">
+
+        </TextView>
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>

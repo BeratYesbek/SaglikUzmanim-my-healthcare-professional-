@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ActivityExpert.profileEditActivityForExpert">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_expert_profile_for_add"
+        android:layout_width="180dp"
+        android:layout_height="140dp"
+        android:paddingLeft="5dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="@color/barColor"
+        app:civ_border_width="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+
+    <Button
+        android:id="@+id/btn_select_image_for_expert"
+        android:layout_width="108dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button2"
+        android:onClick="SelectImage"
+        android:text="Değiştir"
+        android:layout_below="@id/image_expert_profile_for_add"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+         />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_select_image_for_expert"
+
+        >
+        <RelativeLayout
+            android:id="@+id/relativeLayout_edit_expert_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            >
+
+            <EditText
+                android:id="@+id/editText_add_appointment_price"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input2"
+                android:padding="5dp"
+                android:inputType="number"
+                android:hint="Randevu ücreti  "
+                android:textSize="14dp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="#fff"
+                android:padding="5dp"
+                android:text="Randevu ücreti"
+                android:textColor="@color/darkColor"></TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout_edit_expert_profile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout_edit_expert_profile"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/editText_update_about_expert"
+                android:layout_width="350dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input2"
+                android:padding="5dp"
+                android:hint="Hakkında  "
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:textSize="14dp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="#fff"
+                android:padding="5dp"
+
+                android:text="Hakkında"
+                android:textColor="@color/darkColor"></TextView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_expert_update"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btn_update_expert_profile"
+        android:text="GÜNCELLE"
+        android:layout_below="@+id/relative_layout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+         />
+
+    <ProgressBar
+        android:id="@+id/progressBar_edit_expert_profile"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+       android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+</RelativeLayout>

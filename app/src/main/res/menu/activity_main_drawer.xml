@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/menu_profile" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_message"
+            android:title="@string/menu_message" />
+        <item
+        android:id="@+id/nav_list"
+        android:icon="@drawable/ic_list"
+        android:title="@string/menu_list" />
+        <item
+            android:id="@+id/nav_apponitment"
+            android:icon="@drawable/ic_appointment"
+            android:title="Randevu Taleblerim" />
+    </group>
+</menu>
