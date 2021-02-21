@@ -59,6 +59,7 @@ public class AdAddActivity extends AppCompatActivity implements SingleChoiceList
 
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void btn_insert_ad(View view) {
         String title = editText_title.getText().toString();

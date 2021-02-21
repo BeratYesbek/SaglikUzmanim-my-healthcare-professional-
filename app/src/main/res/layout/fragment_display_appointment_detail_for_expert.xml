@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:background="#fff"
+    tools:context=".Fragment.DisplayAppointmentDetailForExpertFragment">
+
+    <Button
+        android:id="@+id/btn_display_appointment_detail_goToBack_for_expert"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_arrow_back_blue">
+
+    </Button>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_display_appointment_detail_goToBack_for_expert"
+        android:layout_marginTop="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView_appointment_detail_expert_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        >
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+
+        android:id="@+id/textView_display_appointment_detail_expertName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/imageView_appointment_detail_expert_profile"
+        android:padding="5dp"
+        android:text="Android Studio"
+        android:textColor="#000"></TextView>
+
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_display_appointment_detail_expertName"
+
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@id/imageView_appointment_detail_expert_profile"
+        android:padding="5dp"
+        android:text="Randevu ücreti: "
+        android:textColor="@color/darkColor"></TextView>
+
+    <TextView
+        android:id="@+id/textView_display_appointment_detail_price_for_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_display_appointment_detail_expertName"
+        android:layout_toEndOf="@id/text_price"
+        android:padding="5dp"
+        android:text="0TL"
+        android:textColor="#000"></TextView>
+
+    <TextView
+        android:id="@+id/text_date_sendToDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView_appointment_detail_expert_profile"
+        android:layout_marginTop="45dp"
+        android:padding="5dp"
+        android:text="Randevu Talep Tarihi: "
+
+        android:textColor="@color/darkColor"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/textView_display_appointment_detail_sendToDate_for_expert"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView_appointment_detail_expert_profile"
+        android:layout_marginTop="45dp"
+        android:layout_toEndOf="@id/text_date_sendToDate"
+        android:padding="5dp"
+
+        android:textColor="#000">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_date_appointmentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_date_sendToDate"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:text="Randevu Tarihi: "
+
+        android:textColor="@color/darkColor"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/textView_display_appointment_detail_appointmentDate_for_expert"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_date_sendToDate"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@id/text_date_appointmentDate"
+        android:padding="5dp"
+        android:textColor="#000">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_display_appointment_detail_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_display_appointment_detail_appointmentDate_for_expert"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+
+        android:textColor="#000">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_display_appointment_detail_time_info_for_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_display_appointment_detail_info"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="#F945CD">
+
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/relative8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_display_appointment_detail_time_info_for_expert"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+
+        >
+
+        <cn.iwgang.countdownview.CountdownView
+            android:id="@+id/countdown_expert_appointment"
+            app:isHideTimeBackground="false"
+            app:isShowDay="true"
+            app:isShowHour="true"
+            app:isShowMillisecond="true"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:isTimeTextBold="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:suffixDay="d"
+            app:suffixGravity="bottom"
+            app:suffixHour="h"
+            app:suffixMillisecond="ms"
+            app:suffixMinute="m"
+            app:suffixSecond="s"
+            app:suffixTextColor="#000000"
+            app:suffixTextSize="12sp"
+            app:timeBgColor="@color/barColor"
+            app:timeTextColor="#FFFFFF"
+            app:timeTextSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            tools:layout_editor_absoluteY="257dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative8"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btn_display_appointment_detail_refuse_expert"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button5"
+            android:elevation="20dp"
+            android:text="Reddet"
+            android:textColor="@color/whitecolor">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_display_appointment_detail_payment_expert"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/btn_display_appointment_detail_refuse_expert"
+            android:background="@drawable/custom_button2"
+            android:elevation="20dp"
+            android:text="Kabul et"
+            android:textColor="@color/whitecolor"
+
+            ></Button>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    </RelativeLayout>

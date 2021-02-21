@@ -26,4 +26,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </ProgressBar>
+    <FrameLayout
+        android:id="@+id/fragment_layout_appointment_detail_for_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout >

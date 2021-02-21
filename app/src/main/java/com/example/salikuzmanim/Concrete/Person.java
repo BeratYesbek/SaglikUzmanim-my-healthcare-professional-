@@ -12,6 +12,7 @@ public class Person implements IEntity {
     private String _type;
     private Uri _profileImage;
     private String _ID;
+    private String _token;
 
 
     public Person(){}
@@ -32,6 +33,16 @@ public class Person implements IEntity {
         this.set_profileImage(profileImage);
 
     }
+    public Person(String firstName,String lastName,String email,String type,String token,String ID,Uri profileImage) {
+
+        this.set_firstName(firstName);
+        this.set_lastName(lastName);
+        this.set_email(email);
+        this.set_type(type);
+        this.set_ID(ID);
+        this.set_profileImage(profileImage);
+        this._token = token;
+    }
 
     public Person(String firstName, String lastName, String email, String password,String type) {
         this.set_firstName(firstName);
@@ -40,6 +51,7 @@ public class Person implements IEntity {
         this.set_password(password);
         this.set_type(type);
     }
+
 
    public Person(String email,String password){
        this.set_email(email);
@@ -109,5 +121,14 @@ public class Person implements IEntity {
 
     public void set_ID(String _ID) {
         this._ID = _ID;
+    }
+
+
+    public String get_token() {
+        return _token;
+    }
+
+    public void set_token(String _token) {
+        this._token = _token;
     }
 }

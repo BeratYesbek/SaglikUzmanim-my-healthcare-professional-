@@ -35,6 +35,7 @@ public class AdapterDisplayJobAdvertisementToExpert extends RecyclerView.Adapter
     private ArrayList<JobAdvertisement> advertisementArrayList;
     private ArrayList<User> userArrayList;
 
+
     public AdapterDisplayJobAdvertisementToExpert(ArrayList<JobAdvertisement> advertisementArrayList, ArrayList<User> userArrayList) {
         this.advertisementArrayList = advertisementArrayList;
         this.userArrayList = userArrayList;

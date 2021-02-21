@@ -107,7 +107,6 @@ public class messageActivityForExpert extends AppCompatActivity implements IRecy
                         MessageArrayList messageArrayList = (MessageArrayList) object;
                         person.addAll(messageArrayList.getArrayListPerson());
 
-                        System.out.println(messageArrayList.getHashMapArrayList().size() + " + aaa");
                         hashMapArrayList.addAll(messageArrayList.getHashMapArrayList());
                         if (hashMapArrayList.size() != 0) {
                             messageCalculater();
@@ -144,20 +143,27 @@ public class messageActivityForExpert extends AppCompatActivity implements IRecy
     @Override
     public void onItemClick(int position) {
 
+        try {
+            Intent intentToMessageActivity = new Intent(getApplicationContext(), MessageActivity.class);
+            Person _person = person.get(position);
+            System.out.println(_person.get_firstName() + "  " + _person.get_lastName() + "  " + _person.get_profileImage());
 
-        Intent intentToMessageActivity = new Intent(getApplicationContext(), MessageActivity.class);
-        Person _person = person.get(position);
+
+            String receiverName = _person.get_firstName() + " " + _person.get_lastName();
+            String receiverID = _person.get_ID();
+            Uri receiverImage = _person.get_profileImage();
+
+            intentToMessageActivity.putExtra("receiverID", receiverID);
+            intentToMessageActivity.putExtra("receiverName", receiverName);
+            intentToMessageActivity.putExtra("receiverImage", receiverImage.toString());
+            intentToMessageActivity.putExtra("receiverToken",_person.get_token());
 
 
-        String receiverName = _person.get_firstName().toString() + " " + _person.get_lastName().toString();
-        String receiverID = _person.get_ID();
-        Uri receiverImage = _person.get_profileImage();
+            startActivity(intentToMessageActivity);
 
-        intentToMessageActivity.putExtra("receiverID", receiverID);
-        intentToMessageActivity.putExtra("receiverName", receiverName);
-        intentToMessageActivity.putExtra("receiverImage", receiverImage.toString());
+        } catch (Exception e) {
 
-        startActivity(intentToMessageActivity);
+        }
 
     }
 

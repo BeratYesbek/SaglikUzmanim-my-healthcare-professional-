@@ -66,6 +66,7 @@ public class AdapterMessages extends RecyclerView.Adapter<AdapterMessages.ViewHo
             String completeName = _person.get_firstName().toString() + " " + _person.get_lastName().toString();
             System.out.println(completeName);
             holder.textView_name.setText(completeName.toUpperCase().toString());
+            System.out.println(" bak bu url : " + _person.get_profileImage());
             Picasso.get().load(_person.get_profileImage()).into(holder.imageView_profile);
 
         } catch (Exception e) {

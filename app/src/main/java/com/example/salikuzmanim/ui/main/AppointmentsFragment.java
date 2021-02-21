@@ -43,6 +43,8 @@ public class AppointmentsFragment extends Fragment {
     private ArrayList<Appointment> appointmentArrayList;
     private ArrayList<User> userArrayList;
 
+    private Boolean check_animation= false;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class AppointmentsFragment extends Fragment {
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        appointmentAdapter = new AdapterAppointmentForExpert(appointmentArrayList, userArrayList);
+        appointmentAdapter = new AdapterAppointmentForExpert(appointmentArrayList, userArrayList,this.getChildFragmentManager());
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(appointmentAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -71,16 +73,27 @@ public class AppointmentsFragment extends Fragment {
     }
 
     public void startAdapter() {
-        appointmentAdapter.notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
-        progressBar.setVisibility(View.INVISIBLE);
+        if(check_animation != null){
+            appointmentAdapter.notifyDataSetChanged();
+            recyclerView.scheduleLayoutAnimation();
+            progressBar.setVisibility(View.INVISIBLE);
+            check_animation =true;
+        }else{
+            appointmentAdapter.notifyDataSetChanged();
+            progressBar.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     public void getAppointmentData() {
+        appointmentArrayList.clear();
+        userArrayList.clear();
         FireBaseAppointmentDal fireBaseAppointmentDal = new FireBaseAppointmentDal();
         fireBaseAppointmentDal.getAppointment(new IGetAppointmentDataListener() {
             @Override
             public void onSuccess(ArrayList entity) {
+                appointmentArrayList.clear();
+                userArrayList.clear();
 
                 appointmentArrayList.addAll(entity);
 
@@ -111,6 +124,7 @@ public class AppointmentsFragment extends Fragment {
                             String firstName = (String) data.get("firstName");
                             String lastName = (String) data.get("lastName");
                             String profileImage = (String) data.get("profileImage");
+                            String token = (String) data.get("token");
 
                             if (appointment.get_senderID().equals(userUid)) {
                                 Uri uriImage = null;
@@ -122,15 +136,13 @@ public class AppointmentsFragment extends Fragment {
                                 user.set_lastName(lastName);
                                 user.set_profileImage(uriImage);
                                 user.set_ID(userUid);
+                                user.set_token(token);
 
                                 userArrayList.add(user);
                             }
-
                         }
                     }
                     startAdapter();
-
-
                 } catch (Exception e) {
                     System.out.println(e.toString());
                 }
@@ -142,44 +154,6 @@ public class AppointmentsFragment extends Fragment {
 
             }
         });
-/*
-                try {
-                    QuerySnapshot queryDocumentSnapshots = (QuerySnapshot) object;
-
-                    for (int i = 0; i < appointmentArrayList.size(); i++) {
-                        Appointment appointment = appointmentArrayList.get(i);
-                        for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
-                            Map<String, Object> data = document.getData();
-
-                            String userUid = (String) data.get("userUid");
-                            String firstName = (String) data.get("firstName");
-                            String lastName = (String) data.get("lastName");
-                            String profileImage = (String) data.get("profileImage");
-
-                            if (appointment.get_senderID().equals(userUid)) {
-                                Uri uriImage = null;
-                                if (profileImage != null) {
-                                    uriImage = Uri.parse(profileImage);
-                                }
-                                User user = new User();
-                                user.set_firstName(firstName);
-                                user.set_lastName(lastName);
-                                user.set_profileImage(uriImage);
-                                user.set_ID(userUid);
-
-                                userArrayList.add(user);
-                            }
-
-                        }
-                    }
-                    startAdapter();
-
-
-                } catch (Exception e) {
-                    System.out.println(e.toString());
-                }
-            }
-*/
 
     }
 

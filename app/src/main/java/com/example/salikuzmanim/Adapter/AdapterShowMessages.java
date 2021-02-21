@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.salikuzmanim.Concrete.Message;
+import com.example.salikuzmanim.Concrete.Chat;
 import com.example.salikuzmanim.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,14 +21,17 @@ import java.util.ArrayList;
 
 public class AdapterShowMessages extends RecyclerView.Adapter<AdapterShowMessages.ViewHolderShowMessages> {
     private static final int MSG_TYPE_LEFT = 0;
-    private static final int MSG_TYPE_RİGHT =1;
+    private static final int MSG_TYPE_RİGHT = 1;
     private Context context;
-    private ArrayList<Message> messages;
+    private ArrayList<Chat> chats;
     private Uri imageUri;
     private FirebaseUser firebaseUser;
-    public AdapterShowMessages(ArrayList<Message> messages, Uri imageUri) {
 
-        this.messages =  messages;
+    private  int viewType_check = 0;
+
+    public AdapterShowMessages(ArrayList<Chat> chats, Uri imageUri) {
+
+        this.chats = chats;
         this.imageUri = imageUri;
 
 
@@ -41,18 +44,17 @@ public class AdapterShowMessages extends RecyclerView.Adapter<AdapterShowMessage
         context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
 
-        if(viewType == MSG_TYPE_RİGHT){
-            View view  = layoutInflater.inflate(R.layout.layout_chat_item_right,parent,false);
+        if (viewType == MSG_TYPE_RİGHT) {
+            View view = layoutInflater.inflate(R.layout.layout_chat_item_right, parent, false);
+            viewType_check = MSG_TYPE_RİGHT;
+            return new AdapterShowMessages.ViewHolderShowMessages(view);
 
-            return new AdapterShowMessages.ViewHolderShowMessages (view);
-
-        }else{
-            View view  = layoutInflater.inflate(R.layout.layout_chat_item_left,parent,false);
-            return new AdapterShowMessages.ViewHolderShowMessages (view);
+        } else {
+            View view = layoutInflater.inflate(R.layout.layout_chat_item_left, parent, false);
+            viewType_check = MSG_TYPE_LEFT;
+            return new AdapterShowMessages.ViewHolderShowMessages(view);
 
         }
-
-
 
 
     }
@@ -60,10 +62,10 @@ public class AdapterShowMessages extends RecyclerView.Adapter<AdapterShowMessage
     @Override
     public int getItemViewType(int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if(messages.get(position).getSenderID().equals(firebaseUser.getUid())){
+        if (chats.get(position).getSenderID().equals(firebaseUser.getUid())) {
 
             return MSG_TYPE_RİGHT;
-        }else{
+        } else {
 
             return MSG_TYPE_LEFT;
         }
@@ -71,22 +73,24 @@ public class AdapterShowMessages extends RecyclerView.Adapter<AdapterShowMessage
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderShowMessages holder, int position) {
-        Message message = messages.get(position);
-        holder.textView_show_message.setText(message.getMessage());
-        System.out.println(imageUri);
+        Chat chat = chats.get(position);
+        holder.textView_show_message.setText(chat.getMessage());
 
-        try{
-            if(message.isSeen()==true){
-                holder.imageView_check_seen.setImageResource(R.drawable.ic_check_seen);
-            }else{
-                holder.imageView_check_seen.setImageResource(R.drawable.ic_check_not_seen);
+
+        try {
+            if(viewType_check == MSG_TYPE_RİGHT) {
+                if (chat.isSeen() == true) {
+                    holder.imageView_check_seen.setImageResource(R.drawable.ic_check_seen);
+                } else {
+                    holder.imageView_check_seen.setImageResource(R.drawable.ic_check_not_seen);
+                }
             }
-            if(imageUri != null){
+            if(viewType_check == MSG_TYPE_LEFT){
                 Picasso.get().load(imageUri).into(holder.imageView_profile);
             }
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
 
@@ -94,13 +98,14 @@ public class AdapterShowMessages extends RecyclerView.Adapter<AdapterShowMessage
 
     @Override
     public int getItemCount() {
-        return messages.size();
+        return chats.size();
     }
 
-    public static class ViewHolderShowMessages extends RecyclerView.ViewHolder{
+    public static class ViewHolderShowMessages extends RecyclerView.ViewHolder {
         ImageView imageView_profile;
         TextView textView_show_message;
         ImageView imageView_check_seen;
+
         public ViewHolderShowMessages(@NonNull View itemView) {
 
             super(itemView);

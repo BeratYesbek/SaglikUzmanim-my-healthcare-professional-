@@ -19,5 +19,11 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal|center_vertical">
     </ProgressBar>
+    <FrameLayout
+        android:id="@+id/fragment_layout_appointment_detail_for_expert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </FrameLayout>

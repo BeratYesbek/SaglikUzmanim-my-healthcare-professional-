@@ -29,7 +29,7 @@ import com.example.salikuzmanim.Concrete.Expert;
 import com.example.salikuzmanim.Concrete.Order;
 import com.example.salikuzmanim.DataBaseManager.FireBaseExpertDal;
 import com.example.salikuzmanim.Fragment.SingleChoiceDoctorDepartmantFragment;
-import com.example.salikuzmanim.Fragment.fragment_order_expert;
+import com.example.salikuzmanim.Fragment.CollectionExpertFragment;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetListDataListener;
 import com.example.salikuzmanim.Interfaces.SingleChoiceLister;
 import com.example.salikuzmanim.R;
@@ -58,7 +58,7 @@ public class ReyclerViewShowExpertForUserActivity extends AppCompatActivity impl
 
     private static AdapterShowExpertToUser adapterShowExpertToUser;
     private static FragmentTransaction fragmentTransaction;
-    private static fragment_order_expert fragment;
+    private static CollectionExpertFragment fragment;
     private static Context context;
 
     @Override
@@ -98,7 +98,7 @@ public class ReyclerViewShowExpertForUserActivity extends AppCompatActivity impl
             public void onClick(View view) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragment = new fragment_order_expert(choiceDepartmant);
+                fragment = new CollectionExpertFragment(choiceDepartmant);
                 fragmentTransaction.setCustomAnimations(R.anim.enter_to_right, R.anim.exit_to_right);
                 fragmentTransaction.add(R.id.framelayout_for_order_expert, fragment).commit();
                 fragmentManager.popBackStack();
@@ -210,9 +210,7 @@ public class ReyclerViewShowExpertForUserActivity extends AppCompatActivity impl
             adapterShowExpertToUser.notifyDataSetChanged();
             recyclerView.scheduleLayoutAnimation();
         }else{
-            System.out.println(result);
             expertArrayList.removeAll(expertArrayList);
-            expertArrayList.removeAll(arrayList);
             adapterShowExpertToUser.notifyDataSetChanged();
             recyclerView.scheduleLayoutAnimation();
             progressBar.setVisibility(View.INVISIBLE);

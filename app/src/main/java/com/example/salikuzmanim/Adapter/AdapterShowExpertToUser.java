@@ -27,10 +27,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salikuzmanim.Activity.MessageActivity;
+import com.example.salikuzmanim.Notification.AppointmentSendNotification;
 import com.example.salikuzmanim.Concrete.Appointment;
 import com.example.salikuzmanim.Concrete.Expert;
 import com.example.salikuzmanim.DataBaseManager.FireBaseAppointmentDal;
-import com.example.salikuzmanim.DatePickerManager;
+import com.example.salikuzmanim.Time.DatePickerManager;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetAppointmentDataListener;
 import com.example.salikuzmanim.R;
 import com.example.salikuzmanim.ui.DisplayExpertProfileFragment;
@@ -162,6 +163,7 @@ public class AdapterShowExpertToUser extends RecyclerView.Adapter<AdapterShowExp
                         intentToMessageActivity.putExtra("receiverImage", expert.get_profileImage().toString());
                     }
                     intentToMessageActivity.putExtra("receiverName", name);
+                    intentToMessageActivity.putExtra("receiverToken",expert.get_token());
                     _context.startActivity(intentToMessageActivity);
                 }
             });
@@ -242,6 +244,7 @@ public class AdapterShowExpertToUser extends RecyclerView.Adapter<AdapterShowExp
             public void onClick(View view) {
                 try {
                     Expert expert = _expertArrayList.get(i);
+                    System.out.println("token085" + expert.get_token());
                     String senderID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     String receiverID = expert.get_expertUid();
                     String date1 = date + " " + time + ":00";
@@ -254,11 +257,14 @@ public class AdapterShowExpertToUser extends RecyclerView.Adapter<AdapterShowExp
                     FireBaseAppointmentDal fireBaseAppointmentDal = new FireBaseAppointmentDal();
                     showApplyDialog.dismiss();
                     showAlertInfo();
-                    fireBaseAppointmentDal.sendAppointment(new Appointment(senderID, receiverID, null, appointmentID, null, false, false, false, timestamp, null),
+                    fireBaseAppointmentDal.sendAppointment(new Appointment(senderID, receiverID, null, appointmentID, null, false, false, false, timestamp, null,expert.get_appointmentPrice()),
                             new IGetAppointmentDataListener() {
                                 @Override
                                 public void onSuccess(ArrayList entity) {
+                                    System.out.println("token 1: " + expert.get_token());
+                                    AppointmentSendNotification.sendAppointmentRequestNotification(expert.get_token(),expert.get_ID());
                                     alertInfo(true);
+
                                 }
 
                                 @Override

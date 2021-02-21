@@ -1,22 +1,29 @@
 package com.example.salikuzmanim.Activity.ActivityExpert;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.salikuzmanim.Concrete.Token;
+import com.example.salikuzmanim.DataBaseManager.FireBaseTokensDal;
 import com.example.salikuzmanim.Interfaces.SingleChoiceLister;
 import com.example.salikuzmanim.R;
 import com.example.salikuzmanim.ui.main.MainPageFragment;
 import com.example.salikuzmanim.ui.main.SectionsPagerAdapter;
 import com.example.salikuzmanim.ui.main.messageActivityForExpert;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class FragmentActivityForExpert extends AppCompatActivity implements SingleChoiceLister {
     private String department;
@@ -38,6 +45,29 @@ public class FragmentActivityForExpert extends AppCompatActivity implements Sing
         
 
         //startOneSignalManager(getApplicationContext());
+        try{
+            String ID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            FirebaseApp.initializeApp(this);
+            FirebaseMessaging.getInstance().setAutoInitEnabled(true);
+            FirebaseMessaging firebaseMessaging = FirebaseMessaging.getInstance();
+            firebaseMessaging.getInstance().getToken().addOnSuccessListener(new OnSuccessListener<String>() {
+                @Override
+                public void onSuccess(String token) {
+                    FireBaseTokensDal fireBaseTokensDal = new FireBaseTokensDal();
+
+                    fireBaseTokensDal.updateTokens(new Token(token,ID),"Expert_users");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    System.out.println(e.toString());
+                }
+            });
+
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,19 +90,7 @@ public class FragmentActivityForExpert extends AppCompatActivity implements Sing
     public FragmentManager getFragmentManager(FragmentActivity activity) {
         return activity.getSupportFragmentManager();
     }
-
-    private void startOneSignalManager(Context context) {
-        /*
-        try{
-            OneSignalManager oneSignalManager = new OneSignalManager();
-            oneSignalManager.startSignal(context);
-        }catch (Exception e){
-
-        }
-*/
-    }
-
-
+    
     @Override
     public void onPossitiveButtonClicked(String[] list, int position, String whichList) {
         String location = list[position];

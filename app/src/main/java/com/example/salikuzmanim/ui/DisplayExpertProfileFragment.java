@@ -49,21 +49,22 @@ public class DisplayExpertProfileFragment extends Fragment {
     private TextView dialog_about;
 
 
-    private Uri VideoUri= null;
+    private Uri VideoUri = null;
 
     private String _expertUid;
-    public DisplayExpertProfileFragment(String expertUid){
+
+    public DisplayExpertProfileFragment(String expertUid) {
         this._expertUid = expertUid;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_display_expert_profile, container, false);
-        System.out.println("dsadsadasdasdsadsasadsadsaadsadsadsadas");
-        try{
+
+        try {
             Intent intent = getActivity().getIntent();
             System.out.println(intent.getStringExtra("expertUid"));
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("hata burada " + e.toString());
         }
 
@@ -113,7 +114,7 @@ public class DisplayExpertProfileFragment extends Fragment {
                 view.setVisibility(View.GONE);
             }
         });
-       getExpertData(_expertUid);
+        getExpertData(_expertUid);
 
         return view;
 
@@ -128,7 +129,7 @@ public class DisplayExpertProfileFragment extends Fragment {
         TextView textView = showVideoDialog.findViewById(R.id.textView_videoView_info_for_user);
         Button btn_dismiss_videoView = showVideoDialog.findViewById(R.id.btn_showVide_for_user_dismiss);
         ProgressBar progressBar = showVideoDialog.findViewById(R.id.progressBar_showVideo_for_user);
-        if ( VideoUri != null) {
+        if (VideoUri != null) {
             videoView.setVideoURI(VideoUri);
             videoView.start();
 
@@ -159,7 +160,7 @@ public class DisplayExpertProfileFragment extends Fragment {
 
     void getExpertData(String expertUid) {
         FireBaseExpertDal fireBaseExpertDal = new FireBaseExpertDal();
-        fireBaseExpertDal.getExpertData(expertUid,new IGetExpertDataListener() {
+        fireBaseExpertDal.getExpertData(expertUid, new IGetExpertDataListener() {
             @Override
             public void onSuccess(IEntity entity) {
                 Expert expert = (Expert) entity;
@@ -170,16 +171,16 @@ public class DisplayExpertProfileFragment extends Fragment {
 
                 _textView_display_point_expert_to_user.setText(expert.get_point().toString());
                 dialog_about.setText(expert.get_about());
-                if(expert.get_about() != null){
+                if (expert.get_about() != null) {
                     _textView_display_about_to_user.setText(expert.get_about());
-                }else{
+                } else {
                     _textView_display_about_to_user.setText("Uzman tarafından henüz açıklama girilmedi.");
                     dialog_about.setText("Uzman tarafından henüz açıklama girilmedi.");
                 }
-                if(expert.get_profileImage() != null){
+                if (expert.get_profileImage() != null) {
                     Picasso.get().load(expert.get_profileImage()).into(_imageView_display_expert_profile_to);
                 }
-                if(expert.get_check_expert() != false){
+                if (expert.get_check_expert() != false) {
                     _imageView_display_expert_check_to_user.setVisibility(View.INVISIBLE);
                 }
                 VideoUri = expert.get_expertVideo();

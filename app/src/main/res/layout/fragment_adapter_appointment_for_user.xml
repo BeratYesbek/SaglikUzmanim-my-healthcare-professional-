@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -44,20 +46,20 @@
             android:layout_toRightOf="@+id/imageView_appointment_adapter_for_user"
             android:maxLength="25"
             android:padding="5dp"
-            android:textStyle="bold"
             android:text="Android studio"
-            android:textColor="@android:color/black"></TextView>
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:id="@+id/textView_adapter_appointment_departmant_for_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_name_appointment_for_user"
             android:layout_toRightOf="@id/imageView_appointment_adapter_for_user"
-            android:text="Doktor"
             android:paddingLeft="5dp"
-            android:textSize="14dp"
+            android:text="Doktor"
             android:textColor="@android:color/black"
-            >
+            android:textSize="14dp">
 
         </TextView>
     </RelativeLayout>
@@ -127,12 +129,16 @@
         android:padding="5dp"
         android:text="Onay bekliyor..."
         android:textColor="@color/darkColor"></TextView>
-
+<RelativeLayout
+    android:id="@+id/relative10"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView_appointment_info_for_user"
+    >
     <TextView
         android:id="@+id/textView_price_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_stuation"
         android:layout_marginLeft="10dp"
         android:padding="5dp"
         android:text="Randevu Ücreti: "
@@ -146,26 +152,40 @@
         android:id="@+id/textView_appointment_price_for_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_stuation"
         android:layout_toRightOf="@id/textView_price_text"
         android:padding="5dp"
+        android:text="150 TL"
         android:textColor="@color/darkColor"
         android:textSize="16dp"
-        android:text="150 TL"
 
-        >
+        />
 
-    </TextView>
+
+</RelativeLayout>
+
+
 
     <RelativeLayout
+        android:id="@+id/relative6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView_appointment_price_for_user"
-        android:layout_marginTop="15dp"
+        android:layout_below="@id/relative10"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:gravity="center"
+        android:gravity="start"
         android:padding="5dp">
-
+        <Button
+            android:id="@+id/btn_see_detail_appointment_adapter_for_user"
+            android:layout_width="120dp"
+            android:textSize="12dp"
+            android:layout_height="40dp"
+            android:text="detayları gör"
+            android:background="@drawable/custom_button2"
+            android:padding="5dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#fff"
+            ></Button>
+<!---
         <Button
             android:id="@+id/btn_appointment_refuse_for_user"
             android:layout_width="120dp"
@@ -190,5 +210,8 @@
             android:textColor="@color/whitecolor"
 
             ></Button>
+            -->
     </RelativeLayout>
+
+
 </RelativeLayout>

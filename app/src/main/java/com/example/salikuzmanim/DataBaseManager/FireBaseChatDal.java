@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 
 import com.example.salikuzmanim.Interfaces.FireBaseInsterfaces.IFireBaseChatDal;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetDataListener;
-import com.example.salikuzmanim.Concrete.Message;
+import com.example.salikuzmanim.Concrete.Chat;
 import com.example.salikuzmanim.Concrete.MessageArrayList;
 import com.example.salikuzmanim.Concrete.Person;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetQueryListener;
@@ -33,16 +33,16 @@ public class FireBaseChatDal implements IFireBaseChatDal {
 
 
     @Override
-    public void insertMessage(Message message) {
+    public void insertMessage(Chat chat) {
         firebaseFirestore = FirebaseFirestore.getInstance();
         HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("messageID", message.getMessageID());
-        hashMap.put("receiverID", message.getReciverID());
-        hashMap.put("senderID", message.getSenderID());
-        hashMap.put("message", message.getMessage());
-        hashMap.put("time", message.getMessageTime());
+        hashMap.put("messageID", chat.getMessageID());
+        hashMap.put("receiverID", chat.getReciverID());
+        hashMap.put("senderID", chat.getSenderID());
+        hashMap.put("message", chat.getMessage());
+        hashMap.put("time", chat.getMessageTime());
         hashMap.put("timestamp", FieldValue.serverTimestamp());
-        hashMap.put("isSeen", message.isSeen());
+        hashMap.put("isSeen", chat.isSeen());
         firebaseFirestore.collection("Chats").document().set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -57,15 +57,15 @@ public class FireBaseChatDal implements IFireBaseChatDal {
     }
 
     @Override
-    public void getMessage(Message message, IGetDataListener getDataListener) {
-        ArrayList<Message> messageArrayList = new ArrayList<>();
+    public void getMessage(Chat chat, IGetDataListener getDataListener) {
+        ArrayList<Chat> chatArrayList = new ArrayList<>();
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseFirestore.collection("Chats").orderBy("timestamp", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                messageArrayList.clear();
+                chatArrayList.clear();
                 for (DocumentSnapshot document : value.getDocuments()) {
                     Map<String, Object> data = document.getData();
 
@@ -77,18 +77,18 @@ public class FireBaseChatDal implements IFireBaseChatDal {
                     boolean isSeen = (boolean) data.get("isSeen");
 
 
-                    if (receiverID.equals(message.getReciverID()) && senderID.equals(message.getSenderID()) ||
-                            receiverID.equals(message.getSenderID()) && senderID.equals(message.getReciverID())) {
-                        Message message1 = new Message();
-                        message1.setMessage(messages);
-                        message1.setSenderID(senderID);
-                        message1.setReciverID(receiverID);
-                        message1.setMessageTime(time);
-                        message1.setSeen(isSeen);
-                        messageArrayList.add(message1);
+                    if (receiverID.equals(chat.getReciverID()) && senderID.equals(chat.getSenderID()) ||
+                            receiverID.equals(chat.getSenderID()) && senderID.equals(chat.getReciverID())) {
+                        Chat chat1 = new Chat();
+                        chat1.setMessage(messages);
+                        chat1.setSenderID(senderID);
+                        chat1.setReciverID(receiverID);
+                        chat1.setMessageTime(time);
+                        chat1.setSeen(isSeen);
+                        chatArrayList.add(chat1);
                     }
                 }
-                getDataListener.onSuccess(messageArrayList);
+                getDataListener.onSuccess(chatArrayList);
 
             }
         });
@@ -230,6 +230,7 @@ public class FireBaseChatDal implements IFireBaseChatDal {
                                             String expertUid = (String) data.get("expertUid");
                                             String department = (String) data.get("department");
                                             String imageProfile = (String) data.get("profileImage");
+                                            String token = (String) data.get("token");
                                             Uri uriImage = Uri.parse(imageProfile);
 
                                             Person expert = new Person();
@@ -238,6 +239,7 @@ public class FireBaseChatDal implements IFireBaseChatDal {
                                             expert.set_email(email);
                                             expert.set_profileImage(uriImage);
                                             expert.set_ID(expertUid);
+                                            expert.set_token(token);
 
                                             if (userList.get(i).equals(expertUid)) {
                                                 personArrayList.add(expert);
@@ -273,17 +275,19 @@ public class FireBaseChatDal implements IFireBaseChatDal {
                                     for (int i = 0; i < userList.size(); i++) {
                                         for (DocumentSnapshot document : queryDocument.getDocuments()) {
                                             Map<String, Object> data = document.getData();
-                                            String firstName = (String) data.get("FirstName");
-                                            String lastName = (String) data.get("LastName");
+                                            String firstName = (String) data.get("firstName");
+                                            String lastName = (String) data.get("lastName");
                                             String email = (String) data.get("email");
                                             String userID = (String) data.get("userUid");
                                             String profileImage = (String) data.get("profileImage");
+                                            String token = (String) data.get("token");
                                             Uri uriProfile = Uri.parse(profileImage);
                                             Person user = new Person();
                                             user.set_firstName(firstName);
                                             user.set_lastName(lastName);
                                             user.set_ID(userID);
                                             user.set_profileImage(uriProfile);
+                                            user.set_token(token);
                                             if (userList.get(i).equals(userID)) {
                                                 personArrayList.add(user);
 

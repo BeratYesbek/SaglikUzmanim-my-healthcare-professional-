@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -18,22 +21,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salikuzmanim.Adapter.AdapterShowMessages;
+import com.example.salikuzmanim.Concrete.Constants;
+import com.example.salikuzmanim.Concrete.Chat;
 import com.example.salikuzmanim.DataBaseManager.FireBaseChatDal;
-import com.example.salikuzmanim.DataBaseManager.FireBaseTokensDal;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetDataListener;
-import com.example.salikuzmanim.Notification.Notification;
-import com.example.salikuzmanim.Notification.NotificationManager;
-import com.example.salikuzmanim.Concrete.Message;
-import com.example.salikuzmanim.Concrete.Token;
+import com.example.salikuzmanim.Network.ApiClient;
+import com.example.salikuzmanim.Network.IApiService;
 import com.example.salikuzmanim.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.UUID;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MessageActivity extends AppCompatActivity {
     private TextView textView_name;
@@ -42,16 +51,19 @@ public class MessageActivity extends AppCompatActivity {
     private RecyclerView recyclerView_message_activity;
     private boolean control_animation = false;
 
-    private String reciverName;
-    private String reciverImage;
-    private String reciverID;
+    private String receiverName;
+    private String receiverImage;
+    private String receiverID;
+    private String receiverToken;
+
+
     private Toolbar toolbar;
 
 
-    private ArrayList<Message> messages;
+    private ArrayList<Chat> chats;
     private AdapterShowMessages adapterShowMessages;
 
-    IGetDataListener iGetDataListener;
+    private Button button_goToBack;
 
 
     @Override
@@ -59,12 +71,15 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
-        messages = new ArrayList<>();
+        chats = new ArrayList<>();
 
         textView_name = findViewById(R.id.textView_message_activity_name);
         imageView_profile = findViewById(R.id.imageView_message_activity);
         editText_message_activity = findViewById(R.id.editText_send_message);
         recyclerView_message_activity = findViewById(R.id.recyclerView_message_activity);
+
+        button_goToBack = findViewById(R.id.btn_message_activity_goToBck);
+
         toolbar = findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
 
@@ -72,32 +87,41 @@ public class MessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         try {
-            reciverName = intent.getStringExtra("receiverName");
-            reciverImage = intent.getStringExtra("receiverImage");
-            reciverID = intent.getStringExtra("receiverID");
+            receiverName = intent.getStringExtra("receiverName");
+            receiverImage = intent.getStringExtra("receiverImage");
+            receiverID = intent.getStringExtra("receiverID");
+            receiverToken = intent.getStringExtra("receiverToken");
+            System.out.println("token : " + receiverToken);
             Uri imageUri = null;
-            if (reciverImage != null) {
-                imageUri = Uri.parse(reciverImage);
+            if (receiverImage != null) {
+                imageUri = Uri.parse(receiverImage);
                 Picasso.get().load(imageUri).into(imageView_profile);
             } else {
                 imageView_profile.setImageResource(R.drawable.ic_profile);
             }
 
-            textView_name.setText(reciverName.toUpperCase());
+            textView_name.setText(receiverName.toUpperCase());
 
             recyclerView_message_activity.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
             linearLayoutManager.setStackFromEnd(true);
             recyclerView_message_activity.setLayoutManager(linearLayoutManager);
-            adapterShowMessages = new AdapterShowMessages(messages, imageUri);
+            adapterShowMessages = new AdapterShowMessages(chats, imageUri);
             recyclerView_message_activity.setAdapter(adapterShowMessages);
             recyclerView_message_activity.refreshDrawableState();
             recyclerView_message_activity.setItemAnimator(new DefaultItemAnimator());
             layoutAnimation(recyclerView_message_activity);
             readMessages();
         } catch (Exception e) {
-            System.out.println(e.toString());
+
         }
+
+        button_goToBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
     }
@@ -115,7 +139,7 @@ public class MessageActivity extends AppCompatActivity {
         super.onResume();
         try {
             FireBaseChatDal fireBaseChatDal = new FireBaseChatDal();
-            fireBaseChatDal.seenMessages(reciverID);
+            fireBaseChatDal.seenMessages(receiverID);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
@@ -127,22 +151,22 @@ public class MessageActivity extends AppCompatActivity {
         String senderID = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
 
         FireBaseChatDal fireBaseChatDal = new FireBaseChatDal();
-        fireBaseChatDal.getMessage(new Message(senderID, reciverID), new IGetDataListener() {
+        fireBaseChatDal.getMessage(new Chat(senderID, receiverID), new IGetDataListener() {
             @Override
             public void onSuccess(Object object) {
                 try {
-                    messages.clear();
-                    messages.addAll((Collection<? extends Message>) object);
+                    chats.clear();
+                    chats.addAll((Collection<? extends Chat>) object);
                     if (control_animation == false) {
                         control_animation = true;
                         adapterShowMessages.notifyDataSetChanged();
                         recyclerView_message_activity.scheduleLayoutAnimation();
-                        adapterShowMessages.notifyItemInserted(messages.size());
+                        adapterShowMessages.notifyItemInserted(chats.size());
                         recyclerView_message_activity.scrollToPosition(adapterShowMessages.getItemCount() - 1);
                         onResume();
                     } else {
                         adapterShowMessages.notifyDataSetChanged();
-                        adapterShowMessages.notifyItemInserted(messages.size());
+                        adapterShowMessages.notifyItemInserted(chats.size());
                         recyclerView_message_activity.scrollToPosition(adapterShowMessages.getItemCount() - 1);
                         onResume();
                     }
@@ -175,10 +199,10 @@ public class MessageActivity extends AppCompatActivity {
                 String messageID = uuid.toString();
                 FireBaseChatDal fireBaseChatDal = new FireBaseChatDal();
                 editText_message_activity.getText().clear();
-                fireBaseChatDal.insertMessage(new Message(message, messageID, reciverID, senderID, formatter.format(date), false));
+                fireBaseChatDal.insertMessage(new Chat(message, messageID, receiverID, senderID, formatter.format(date), false));
+                setJsonData(message);
                 readMessages();
-                sendNotification(message, FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString());
-                messages.clear();
+                chats.clear();
             } else {
 
             }
@@ -189,7 +213,68 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
-    public void sendNotification(String message, String name) {
+    public void setJsonData(String message)  {
+        try {
+
+            JSONArray tokens = new JSONArray();
+            tokens.put(receiverToken);
+
+            JSONObject body = new JSONObject();
+            JSONObject data = new JSONObject();
+
+
+            data.put(Constants.REMOTE_MSG_TYPE, Constants.REMOTE_CHAT);
+            data.put(Constants.REMOTE_MSG_MEETING_TYPE, "chat");
+            data.put(Constants.KEY_USER_NAME, receiverName);
+            data.put(Constants.KEY_MESSAGE_BODY,message);
+            data.put(Constants.REMOTE_MSG_INVITER_TOKEN, receiverToken);
+            data.put(Constants.KEY_USER_ID,receiverID);
+
+
+
+
+
+            body.put(Constants.REMOTE_MSG_DATA, data);
+            body.put(Constants.REMOTE_MSG_REGISTRATION_IDS, tokens);
+
+            System.out.println(body.toString());
+            sendNotification(body.toString());
+
+
+        } catch (Exception exception) {
+
+            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
+            finish();
+        }
+
+    }
+
+
+    public void sendNotification(String remoteMessageBody) {
+        ApiClient.getClient().create(IApiService.class).sendRemoteMessage(
+                Constants.getRemoteMessageHeaders(), remoteMessageBody
+        ).enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "gönderiliyor...", Toast.LENGTH_LONG).show();
+                } else {
+
+                    Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+
+        /*
         FireBaseTokensDal fireBaseTokensDal = new FireBaseTokensDal();
         fireBaseTokensDal.getTokens(new Token(null, reciverID), new IGetDataListener() {
             @Override
@@ -207,6 +292,7 @@ public class MessageActivity extends AppCompatActivity {
 
             }
         });
+        */
     }
 
 

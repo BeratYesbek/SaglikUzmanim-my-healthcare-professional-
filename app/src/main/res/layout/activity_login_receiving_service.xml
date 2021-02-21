@@ -5,16 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.LoginReceivingServiceActivity"
-    android:background="#fff"
+    android:background="@drawable/custom_background_1"
     >
 
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/custom_card_view_6"
+    android:elevation="20dp"
+    android:layout_margin="10dp"
+    >
     <RelativeLayout
         android:id="@+id/RelativeLayout_user_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -25,7 +31,7 @@
 
             <EditText
                 android:id="@+id/editTextEmailLoginUser"
-                android:layout_width="350dp"
+                android:layout_width="320dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_input2"
@@ -54,7 +60,7 @@
 
             <EditText
                 android:id="@+id/editTextPasswordLoginUser"
-                android:layout_width="350dp"
+                android:layout_width="320dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/custom_input2"
@@ -103,16 +109,18 @@
         android:layout_centerHorizontal="true"
         android:text="Kayıt Ol"
         android:textColor="#fff"
+        android:layout_marginBottom="10dp"
 
         android:layout_below="@id/btnLogin2" />
+</RelativeLayout>
+
 
     <ImageView
         android:id="@+id/imageView_text_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="55dp"
-        android:src="@drawable/text_user" />
+        android:layout_marginTop="80dp"
+        android:src="@drawable/user_text_image" />
 
     <ProgressBar
         android:id="@+id/progressBarLoginReceiving"
@@ -120,6 +128,8 @@
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:elevation="500dp"
+
         >
     </ProgressBar>
 <!---

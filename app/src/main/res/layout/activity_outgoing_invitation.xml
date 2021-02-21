@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_meeting_invitation"
+    tools:context=".Activity.meetingActivity.IncomignInvitationActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:text="Aranıyor..."
+        android:textColor="#fff"
+        android:textSize="18dp"
+
+        >
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_card_view_8"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:id="@+id/relative11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/custom_text_view_bottom_border"
+
+                >
+
+                <TextView
+                    android:id="@+id/textView_checkCameraDevice_Info_outGoing"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Kamera bağlantınız kontrol ediliyor..."
+                    android:textColor="@color/darkColor"
+                    android:textSize="14dp"></TextView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_check_camera_device_outGoing"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkCameraDevice_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:id="@+id/imageView_checkCamera"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkCameraDevice_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_check_green"
+                    >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative11"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/custom_text_view_bottom_border"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/textView_checkMicrophoneDevice_Info_outGoing"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Mikrofon bağlantınız kontrol ediliyor..."
+                    android:textColor="@color/darkColor"
+                    android:textSize="14dp"></TextView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_checkMicrophoneDevice_outGoing"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkMicrophoneDevice_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    >
+
+                </ProgressBar>
+                <ImageView
+                    android:id="@+id/imageView_checkMicrophone"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkMicrophoneDevice_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_check_green"
+                    >
+                </ImageView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative12"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:background="@drawable/custom_text_view_bottom_border">
+
+                <TextView
+                    android:id="@+id/textView_checkConnection_Info_outGoing"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Internet bağlantınız kontrol ediliyor..."
+                    android:textColor="@color/darkColor"
+                    android:textSize="14dp">
+
+                </TextView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_checkConnection_outGoing"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkConnection_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    >
+
+                </ProgressBar>
+                <ImageView
+                    android:id="@+id/imageView_checkConnection"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView_checkConnection_Info_outGoing"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_check_green"
+                    >
+                </ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative14"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative13"
+                android:background="@drawable/custom_text_view_bottom_border"
+
+                >
+
+                <TextView
+                    android:id="@+id/textView_last_status_info_outGoing"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Aranıyor... Uzmandan cevap bekleniliyor..."
+                    android:textColor="@color/barColor"
+                    android:textSize="14dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar_lastStatus_outGoing"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/textView_last_status_info_outGoing"
+                    >
+
+                </ProgressBar>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ImageViewMeetingType"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_baseline_videocam_24"></ImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ImageView_meetingOut_user_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/ImageViewMeetingType"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_profile"></de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/textView_meetingOut_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImageView_meetingOut_user_profile"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_meetingOut_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/image_stop_invitation"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custom_button5"
+            android:src="@drawable/ic_close"
+            android:text="Ayrıl"
+            android:textColor="#fff"
+            android:drawableStart="@drawable/ic_close"
+            android:drawablePadding="-15dp"
+            android:padding="10dp"
+
+
+            >
+
+        </Button>
+    </LinearLayout>
+
+</RelativeLayout>

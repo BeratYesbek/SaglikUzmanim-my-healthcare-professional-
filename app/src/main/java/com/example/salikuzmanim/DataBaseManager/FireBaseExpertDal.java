@@ -145,9 +145,11 @@ public class FireBaseExpertDal implements IFireBaseExpertDal<Expert> {
                             String expertUid = (String) data.get("expertUid");
                             String type = (String) data.get("type");
                             String expertVideo = (String) data.get("expertVideoUri");
+                            String token = (String) data.get("token");
                             Boolean check_expert = (Boolean) data.get("check_expert");
                             Object point = (Object) data.get("point");
                             Object appointmentPrice = data.get("appointmentPrice");
+
                             Uri uriImage = null;
                             Uri uriVideo = null;
                             Float pointFloat = Float.parseFloat(point.toString());
@@ -422,6 +424,8 @@ public class FireBaseExpertDal implements IFireBaseExpertDal<Expert> {
                             Object appointment_price = data.get("appointmentPrice");
                             Object point = (Object) data.get("point");
                             Boolean check_expert = (Boolean) data.get("check_expert");
+                            String token = (String) data.get("token");
+                            System.out.println("token01 " + token );
                             Uri uri_profileImage = null;
                             Uri uri_expertVideo = null;
                             try {
@@ -433,7 +437,7 @@ public class FireBaseExpertDal implements IFireBaseExpertDal<Expert> {
                                 if (expertVideoUri != null) {
                                     uri_expertVideo = Uri.parse(expertVideoUri);
                                 }
-                                arrayListExpert.add(new Expert(firstName, lastName, email, department, "expert", about, float_appointment_price, float_point, check_expert, expertUid, uri_profileImage, uri_expertVideo));
+                                arrayListExpert.add(new Expert(firstName, lastName, email, department, "expert", token,about, float_appointment_price, float_point, check_expert, expertUid, uri_profileImage, uri_expertVideo));
 
 
                             } catch (Exception e) {
@@ -477,6 +481,8 @@ public class FireBaseExpertDal implements IFireBaseExpertDal<Expert> {
                             String about = (String) data.get("about");
                             String profileImage = (String) data.get("profileImage");
                             String expertVideoUri = (String) data.get("expertVideoUri");
+                            String token = (String) data.get("token");
+                            System.out.println("token02 " + token );
                             Object appointment_price = data.get("appointmentPrice");
                             Object point = (Object) data.get("point");
                             Boolean check_expert = (Boolean) data.get("check_expert");
@@ -491,7 +497,7 @@ public class FireBaseExpertDal implements IFireBaseExpertDal<Expert> {
                                 if (expertVideoUri != null) {
                                     uri_expertVideo = Uri.parse(expertVideoUri);
                                 }
-                                arrayListExpert.add(new Expert(firstName, lastName, email, department, "expert", about, float_appointment_price, float_point, check_expert, expertUid, uri_profileImage, uri_expertVideo));
+                                arrayListExpert.add(new Expert(firstName, lastName, email, department, "expert",token, about, float_appointment_price, float_point, check_expert, expertUid, uri_profileImage, uri_expertVideo));
 
 
                             } catch (Exception e) {

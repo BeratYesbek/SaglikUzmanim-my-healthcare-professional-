@@ -13,8 +13,9 @@ public class Appointment implements IEntity {
     private Boolean _payment;
     private Timestamp _timestamp_appointment_date;
     private Timestamp _timestamp_sendTo_time;
+    private Float _appointmentPrice;
 
-    public Appointment(String senderID,String receiverID,String documentID,String appointmentID,String whoCanceled,Boolean situation,Boolean abort,Boolean payment,Timestamp timestamp_appointment_date,Timestamp timestamp_sendTo_time){
+    public Appointment(String senderID,String receiverID,String documentID,String appointmentID,String whoCanceled,Boolean situation,Boolean abort,Boolean payment,Timestamp timestamp_appointment_date,Timestamp timestamp_sendTo_time,Float appointmentPrice){
         this.set_senderID(senderID);
         this.set_receiverID(receiverID);
         this.set_documentID(documentID);
@@ -25,6 +26,14 @@ public class Appointment implements IEntity {
         this.set_payment(payment);
         this.set_timestamp_appointment_date(timestamp_appointment_date);
         this.set_timestamp_sendTo_time(timestamp_sendTo_time);
+        this.set_appointmentPrice(appointmentPrice);
+    }
+    public Appointment(String documentID,String whoCanceled,Boolean abort,Boolean payment,Boolean situation){
+        this._documentID = documentID;
+        this._whoCanceled = whoCanceled;
+        this._abort = abort;
+        this._payment = payment;
+        this._situation = situation;
     }
 
 
@@ -106,5 +115,13 @@ public class Appointment implements IEntity {
 
     public void set_timestamp_sendTo_time(Timestamp _timestamp_sendTo_time) {
         this._timestamp_sendTo_time = _timestamp_sendTo_time;
+    }
+
+    public Float get_appointmentPrice() {
+        return _appointmentPrice;
+    }
+
+    public void set_appointmentPrice(Float _appointmentPrice) {
+        this._appointmentPrice = _appointmentPrice;
     }
 }

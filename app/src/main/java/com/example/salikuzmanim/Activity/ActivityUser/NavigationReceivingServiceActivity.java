@@ -1,6 +1,5 @@
 package com.example.salikuzmanim.Activity.ActivityUser;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -23,18 +22,21 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.salikuzmanim.OneSignalManager;
+import com.example.salikuzmanim.Concrete.Token;
+import com.example.salikuzmanim.DataBaseManager.FireBaseTokensDal;
 import com.example.salikuzmanim.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.squareup.picasso.Picasso;
 
@@ -80,7 +82,6 @@ public class NavigationReceivingServiceActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        startOneSignalManager(getApplicationContext());
 
         addButton = findViewById(R.id.btn_add_ad);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +128,7 @@ public class NavigationReceivingServiceActivity extends AppCompatActivity {
 
 
       //  getUserDataForNav();
+        startFirebaseTokenManager();
 
 
 
@@ -162,9 +164,33 @@ public class NavigationReceivingServiceActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private void startOneSignalManager(Context context){
+    private void startFirebaseTokenManager( ){
+
+        try{
+            String ID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            FirebaseApp.initializeApp(this);
+            FirebaseMessaging.getInstance().setAutoInitEnabled(true);
+            FirebaseMessaging firebaseMessaging = FirebaseMessaging.getInstance();
+            firebaseMessaging.getInstance().getToken().addOnSuccessListener(new OnSuccessListener<String>() {
+                @Override
+                public void onSuccess(String token) {
+                    FireBaseTokensDal fireBaseTokensDal = new FireBaseTokensDal();
+
+                    fireBaseTokensDal.updateTokens(new Token(token,ID),"users");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    System.out.println(e.toString());
+                }
+            });
+
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
+        /*
         OneSignalManager oneSignalManager = new OneSignalManager();
-        oneSignalManager.startSignal(context);
+        oneSignalManager.startSignal(context);*/
     }
 
 

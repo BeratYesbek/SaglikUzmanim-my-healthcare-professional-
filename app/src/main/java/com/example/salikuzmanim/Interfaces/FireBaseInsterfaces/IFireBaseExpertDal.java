@@ -8,6 +8,7 @@ import com.example.salikuzmanim.Interfaces.GetDataListener.IGetDataListener;
 import com.example.salikuzmanim.Concrete.Order;
 
 public interface IFireBaseExpertDal<T extends IEntity> {
+
     void insertExpert(T entity, IGetExpertDataListener iGetExpertDataListener);
 
     void updateExpert(T entity, IGetExpertDataListener iGetExpertDataListener);
@@ -29,4 +30,5 @@ public interface IFireBaseExpertDal<T extends IEntity> {
    <E extends Order> void getAllExpert(E entity, IGetListDataListener iGetListDataListener);
 
    void getExpertList(IGetDataListener iGetDataListener);
+
 }

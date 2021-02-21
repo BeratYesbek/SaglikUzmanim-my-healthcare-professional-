@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btn_message_activity_back"
+            android:id="@+id/btn_message_activity_goToBck"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_margin="10dp"
@@ -32,7 +32,7 @@
             android:layout_width="55dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:layout_toRightOf="@id/btn_message_activity_back"
+            android:layout_toRightOf="@id/btn_message_activity_goToBck"
             android:src="@drawable/profile"
 
             >

@@ -19,11 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salikuzmanim.Activity.MessageActivity;
 import com.example.salikuzmanim.Adapter.AdapterMessages;
+import com.example.salikuzmanim.Concrete.MessageArrayList;
+import com.example.salikuzmanim.Concrete.Person;
 import com.example.salikuzmanim.DataBaseManager.FireBaseChatDal;
 import com.example.salikuzmanim.Interfaces.GetDataListener.IGetDataListener;
 import com.example.salikuzmanim.Interfaces.IRecyclerViewClick;
-import com.example.salikuzmanim.Concrete.MessageArrayList;
-import com.example.salikuzmanim.Concrete.Person;
 import com.example.salikuzmanim.R;
 
 import java.util.ArrayList;
@@ -39,9 +39,11 @@ public class messageFragmentForUser extends Fragment implements IRecyclerViewCli
 
 
     private AdapterMessages adapterMessages;
-    private boolean animation_control=false;
+
     private ArrayList<Person> person;
     private ArrayList<HashMap> hashMapArrayList;
+
+    private boolean animation_control = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,24 +79,27 @@ public class messageFragmentForUser extends Fragment implements IRecyclerViewCli
         getUser();
     }
 
-    public void messageCalculater(){
+    public void messageCalculater() {
         System.out.println("naptın haci");
         int total = 0;
-        for(int i=0; i<hashMapArrayList.size();i++){
-            HashMap<String,Object> hashMap = hashMapArrayList.get(i);
+        for (int i = 0; i < hashMapArrayList.size(); i++) {
+            HashMap<String, Object> hashMap = hashMapArrayList.get(i);
             int totalIsntSeen = (int) hashMap.get("totalIsntSeen");
-            total = total +totalIsntSeen;
-            System.out.println(total);
+            total = total + totalIsntSeen;
+
 
         }
-        textView_info.setText("("+total+")" + " yeni sohbet");
+
+        textView_info.setText("(" + total + ")" + " yeni sohbet");
 
     }
-    public void remove_adapter_item(){
-        for (int index = 0; index<person.size();index++){
+
+    public void remove_adapter_item() {
+        for (int index = 0; index < person.size(); index++) {
             adapterMessages.notifyItemRemoved(index);
         }
     }
+
     public void getUser() {
         try {
             FireBaseChatDal fireBaseChatDal = new FireBaseChatDal();
@@ -111,9 +116,9 @@ public class messageFragmentForUser extends Fragment implements IRecyclerViewCli
                         messageCalculater();
                         adapterMessages.notifyDataSetChanged();
 
-                        if(animation_control == false){
+                        if (animation_control == false) {
                             recyclerView.scheduleLayoutAnimation();
-                            animation_control=true;
+                            animation_control = true;
                         }
 
                         progressBar.setVisibility(View.INVISIBLE);
@@ -145,23 +150,26 @@ public class messageFragmentForUser extends Fragment implements IRecyclerViewCli
 
     @Override
     public void onItemClick(int position) {
+
         try {
             Person _person = person.get(position);
 
             String receiverName = _person.get_firstName().toString() + " " + _person.get_lastName().toString();
             String receiverID = _person.get_ID();
             Uri receiverImage = _person.get_profileImage();
+            System.out.println(receiverName + "  " + receiverID + " " + receiverImage);
             Intent intentToMessageActivity = new Intent(getActivity(), MessageActivity.class);
 
             intentToMessageActivity.putExtra("receiverID", receiverID);
             intentToMessageActivity.putExtra("receiverName", receiverName);
             intentToMessageActivity.putExtra("receiverImage", receiverImage.toString());
+            intentToMessageActivity.putExtra("receiverToken",_person.get_token());
 
             startActivity(intentToMessageActivity);
         } catch (Exception e) {
             System.out.println(e.toString());
-        }
 
+        }
     }
 
     @Override

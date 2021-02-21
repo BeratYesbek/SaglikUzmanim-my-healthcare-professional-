@@ -7,8 +7,12 @@
     <color name="buttonColor">#00C8FF</color>
     <color name = "greenColor">#02FF00</color>
     <color name="greenColor2">#00df0b</color>
+    <color name="colorMeetingInvitationStart">#4004BB</color>
+    <color name="colorMeetingInvitationEnd">#8A1AAA</color>
 
-
+    <color name="colorPrimary">#5253B1</color>
+    <color name="color">#0A1963</color>
+    <color name="colorAccent">#E94A47</color>
 </resources>
 
 

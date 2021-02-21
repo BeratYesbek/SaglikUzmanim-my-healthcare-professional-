@@ -50,6 +50,21 @@ public class Expert extends Person implements IEntity {
         this.set_expertVideo(expertVideo);
 
     }
+    public Expert(String firstName, String lastName, String email, String department,
+                  String type,String token ,String about, Float appointmentPrice, Float point,
+                  Boolean check_expert, String expertUid, Uri profileImage, Uri expertVideo) {
+
+      super(firstName, lastName, email, type,token, expertUid, profileImage);
+        this.set_department(department);
+        this.set_about(about);
+        this.set_check_expert(check_expert);
+        this.set_appointmentPrice(appointmentPrice);
+        this._expertUid = expertUid;
+        this.set_point(point);
+        this.set_expertVideo(expertVideo);
+
+
+    }
 
     public Expert(String firstName, String lastName, String email, String department, String about, Float point, Boolean check_circle, String expertUid) {
         super(firstName, lastName, email);
