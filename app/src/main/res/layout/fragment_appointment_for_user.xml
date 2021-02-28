@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:layout_marginTop="70dp"
-    tools:context=".ui.appointment_for_user">
+    tools:context=".ui.UserMainUI.AppointmentFragmentForUser">
 
     <androidx.recyclerview.widget.RecyclerView
 
@@ -26,10 +26,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </ProgressBar>
+
+
     <FrameLayout
         android:id="@+id/fragment_layout_appointment_detail_for_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </FrameLayout>
+    <TextView
+        android:id="@+id/textView_info_appointment_ui_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/darkColor"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView_appointment_for_user"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView_appointment_for_user"
+        tools:layout_editor_absoluteX="5dp">
+
+    </TextView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout >

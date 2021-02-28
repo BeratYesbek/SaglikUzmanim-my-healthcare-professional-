@@ -26,4 +26,21 @@
             android:icon="@drawable/ic_appointment"
             android:title="Randevu Taleblerim" />
     </group>
+
+    <item android:title="Diğer işlemler">
+        <menu>
+            <item
+                android:title="Hesap ayarları"
+                android:icon="@drawable/ic_settings"
+                android:id="@+id/nav_setting"
+
+                />
+            <item
+                android:title="Çıkış"
+                android:icon="@drawable/ic_log_out"
+                android:id="@+id/nav_log_out"
+
+                />
+        </menu>
+    </item>
 </menu>

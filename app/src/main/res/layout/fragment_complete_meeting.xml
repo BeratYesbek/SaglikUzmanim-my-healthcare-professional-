@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_card_view_6"
+
+    >
+    <TextView
+        android:id="@+id/text_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lütfen görüşmenin tamamlaıp tamamlanmadığınız belitiriniz"
+        android:padding="5dp"
+        android:textColor="@color/darkColor"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        >
+
+    </TextView>
+    <Switch
+        android:id="@+id/switch_complete_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:text="Görüşme tamamlandı"
+        android:layout_below="@+id/text_message"
+         />
+    <Button
+        android:id="@+id/btn_fragment_complete_next"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/custom_button2"
+        android:text="ileri"
+        android:textColor="#fff"
+        android:layout_below="@+id/switch_complete_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        >
+
+    </Button>
+</RelativeLayout>

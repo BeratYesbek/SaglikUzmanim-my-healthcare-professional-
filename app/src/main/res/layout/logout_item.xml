@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_card_view_6"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/title_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uyarı"
+            android:textSize="22dp"
+            android:textColor="#000"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            ></TextView>
+        <TextView
+            android:id="@+id/info_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Çıkış yapmak istediğinize emin misiniz ?"
+            android:layout_below="@id/title_logout"
+            android:textColor="@color/darkColor"
+            android:textSize="16dp"
+            android:padding="5dp"
+            >
+
+        </TextView>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info_logout"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            >
+            <Button
+                android:id="@+id/btn_log_out_cancel"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:background="@drawable/custom_button2"
+                android:text="Hayır"
+                android:textColor="#fff"
+                android:layout_marginRight="20dp"
+                >
+
+            </Button>
+            <Button
+                android:id="@+id/btn_log_out_yes"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@id/btn_log_out_cancel"
+                android:background="@drawable/custom_button"
+                android:text="Evet"
+                android:textColor="#fff"
+                >
+
+            </Button>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_meeting_invitation"
-    tools:context=".Activity.meetingActivity.IncomignInvitationActivity">
+    tools:context=".Activity.meetingActivity.IncomingInvitationActivity">
     <ImageView
         android:id="@+id/ImageViewMeetingType"
         android:layout_width="50dp"

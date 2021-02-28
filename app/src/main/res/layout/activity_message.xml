@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/BaseAppTheme2"
-    tools:context=".Activity.MessageActivity">
+    tools:context=".Activity.CommonActivity.MessageActivity">
 
     <include
         android:id="@+id/custom_toolbar"

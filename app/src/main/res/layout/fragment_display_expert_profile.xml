@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:background="#fff"
-    tools:context=".ui.main.ProfileFragment">
+    tools:context=".ui.ExpertMainUI.ProfileFragmentForExpert">
     <Button
         android:id="@+id/btn_display_expert_profile_go_to_back"
         android:layout_width="45dp"
@@ -209,6 +209,7 @@
         </TextView>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_display_expert_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/relativeLayout_bottom"

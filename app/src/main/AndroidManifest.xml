@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.salikuzmanim">
+    package="com.saglikuzmanimm.saglikuzmanim">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -16,7 +16,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/doctor"
@@ -26,39 +25,28 @@
         android:theme="@style/AppTheme1"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".Activity.CommonActivity.SettingActivity"></activity>
+        <activity android:name=".Activity.NotificationTabLayout.NotificationTabLayoutActivity" />
         <activity
             android:name=".Activity.meetingActivity.OutgoingInvitationActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity.meetingActivity.IncomignInvitationActivity"
+            android:name=".Activity.meetingActivity.IncomingInvitationActivity"
             android:screenOrientation="portrait" />
 
         <uses-library
             android:name="com.google.android.maps"
             android:required="true" />
-
         <uses-library
             android:name="com.google.android.wearable"
             android:required="false" />
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
+
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
-
-        <!--
-     Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more.
-        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/doctor" />
-        <!--
- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more.
-        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/barColor" />
@@ -73,34 +61,32 @@
             android:value="false" />
 
         <activity
-            android:name=".ui.main.messageActivityForExpert"
+            android:name=".Activity.ActivityExpert.MessageListActivityForExpert"
             android:theme="@style/BaseAppTheme2" />
         <activity
-            android:name=".Activity.MessageActivity"
+            android:name=".Activity.CommonActivity.MessageActivity"
             android:theme="@style/BaseAppThemeGray" />
         <activity
-            android:name=".gridViewClickManager.ReyclerViewShowExpertForUserActivity"
+            android:name=".Activity.ActivityUser.ReyclerViewShowExpertForUserActivity"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".gridViewClickManager.ReyclerViewShowAddForExpertActivity" />
-        <activity android:name=".Activity.ShowAboutExpertActivity" />
         <activity android:name=".Activity.ActivityExpert.profileEditActivityForExpert" />
         <activity android:name=".Activity.ActivityUser.JobAdvertisementUpdateActivity" />
-        <activity android:name=".Activity.ActivityUser.profileEditActivityForUser" />
-        <activity android:name=".Activity.LoginReceivingServiceActivity" />
-        <activity android:name=".Activity.MainActivity2" />
+        <activity android:name=".Activity.ActivityUser.ProfileEditActivityForUser" />
+        <activity android:name=".Activity.ActivityUser.LoginUserActivity" />
+        <activity android:name=".Activity.CommonActivity.MainChoiceActivity" />
         <activity
             android:name=".Activity.ActivityExpert.FragmentActivityForExpert"
-            android:label="@string/title_activity_fragment_for_expert"
-            android:theme="@style/AppTheme2" />
-        <activity android:name=".Activity.ActivityUser.AdAddActivity" />
+
+          />
+        <activity android:name=".Activity.ActivityUser.JobAdvertisementAddActivity" />
         <activity
-            android:name=".Activity.ActivityUser.NavigationReceivingServiceActivity"
+            android:name=".Activity.ActivityUser.NavigationUserActivity"
             android:label="@string/title_activity_navigation_receiving_service"
             android:theme="@style/AppTheme1" />
-        <activity android:name=".Activity.ActivityUser.SignUpReceivingServiceActivity" />
-        <activity android:name=".Activity.ActivityExpert.SignUpGiveServiceActivity" />
-        <activity android:name=".Activity.LoginGiveServiceActivity" />
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.ActivityUser.SignUpUserActivity" />
+        <activity android:name=".Activity.ActivityExpert.SignUpExpertActivity" />
+        <activity android:name=".Activity.ActivityExpert.LoginExpertActivity" />
+        <activity android:name=".Activity.CommonActivity.MainConnectionControlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -115,8 +101,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <receiver android:name=".Service.AlarmReceiver" />
     </application>
 
 </manifest>

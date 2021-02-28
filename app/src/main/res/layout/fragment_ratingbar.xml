@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_card_view_6"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/relative16"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView_fragment_ratingBar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_profile"
+                >
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+            <TextView
+                android:id="@+id/textView_fragment_ratingBar_expert_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/barColor"
+                android:layout_toRightOf="@id/imageView_fragment_ratingBar"
+                android:text="SAĞLIK UZMANIM"
+                >
+
+            </TextView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lütfen Uzmanınıza puan veriniz."
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:padding="4dp"
+            android:layout_below="@+id/relative16"
+            android:layout_centerHorizontal="true"
+            >
+
+        </TextView>
+        <RatingBar
+            android:id="@+id/ratingBar_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title"
+            android:layout_centerHorizontal="true"
+
+            >
+
+        </RatingBar>
+        <Button
+            android:id="@+id/btn_ratingBar_next"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ratingBar_fragment"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_button2"
+            android:textColor="#fff"
+            android:text="ileri"
+
+            >
+
+        </Button>
+    </RelativeLayout>
+
+</RelativeLayout>

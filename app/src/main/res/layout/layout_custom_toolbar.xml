@@ -33,7 +33,7 @@
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:layout_toRightOf="@id/btn_message_activity_goToBck"
-            android:src="@drawable/profile"
+            android:src="@drawable/ic_profile"
 
             >
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.salikuzmanim"
+        applicationId "com.saglikuzmanimm.saglikuzmanim"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
@@ -31,7 +31,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
+    androidTestImplementation "androidx.test:runner:1.3.0"
+    androidTestImplementation "androidx.test:core:1.3.0"
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test:rules:1.3.0"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -57,13 +62,10 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
 
-
     androidTestImplementation 'junit:junit:4.12'
 
     implementation 'com.github.mahimrocky:ShowMoreText:1.0.2'
 
-
-    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -71,7 +73,7 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
-   //firebase
+    //firebase
     implementation 'com.google.android.gms:play-services-basement:17.5.0'
     implementation platform('com.google.firebase:firebase-bom:26.5.0')
     implementation 'com.google.firebase:firebase-messaging'
@@ -85,12 +87,11 @@ dependencies {
     compileOnly 'com.google.android.wearable:wearable:2.8.1'
 
     //Jitsi meeting
-    implementation ('org.jitsi.react:jitsi-meet-sdk:2.8.2') { transitive = true }
+    implementation('org.jitsi.react:jitsi-meet-sdk:2.8.2') { transitive = true }
 
     //cout down
     implementation 'com.github.iwgang:countdownview:2.1.6'
     implementation 'com.airbnb.android:lottie:3.4.0'
-
 
 
 }

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Activity.ActivityExpert.SignUpExpertActivity">
+
+
+    <EditText
+        android:id="@+id/editTextPasswordSignUpAgain1"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Şifre Tekrar"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/nav_header_email"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextEmailSignUp1"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:padding="5dp"
+
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPasswordSignUp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTSocialNumber"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:padding="5dp"
+        android:layout_marginBottom="8dp"
+        android:maxLength="11"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Kimlik Numarası"
+        android:inputType="number"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmailSignUp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextPasswordSignUp1"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:padding="5dp"
+
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Şifre "
+        android:inputType="textPassword"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPasswordSignUpAgain1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextFirstName3"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Ad"
+        android:inputType="textPersonName"
+        android:padding="5dp"
+        android:textColor="#121111"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTextLastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="216dp"
+        android:layout_height="41dp"
+        android:padding="5dp"
+
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_input"
+        android:ems="10"
+        android:hint="Soyad"
+        android:inputType="textPersonName"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTSocialNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChoseFile1"
+        android:layout_width="82dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btnChoseFileIdCard"
+
+        android:shadowColor="#FF9B0C"
+        android:text="Dosya seç"
+        android:textIsSelectable="false"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChoseFile2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChoseExport"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btnSelectExpert"
+        android:shadowColor="#FAFAFA"
+
+        android:text="UZMANLIK SEÇ"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChoseFile2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btnChoseFile2"
+        android:layout_width="82dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btnChoseFileDiploma"
+        android:text="Dosya seç"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSignUp2"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_button"
+        android:onClick="btnSignUp"
+        android:shadowColor="#CD6A6A"
+        android:text="KAYIT OL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="273dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onCheckbox"
+        android:shadowColor="#FFFFFF"
+        android:text="Herşeyi Kabul Ediyorum"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nav_header_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="12dp"
+        android:text="Sağlık uzmanı olduğunuzun onaylanması için kimlik fotoğrafı ve diploma fotoğrafı sisteme yüklenmelidir !!!"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/btnChoseFile1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="28dp"
+        android:text="Kimlik Fotoğrafı (ön yüz)"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/btnChoseFile1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Diploma Fotoğrafı"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toEndOf="@+id/btnChoseFile2" />
+
+    <TextView
+        android:id="@+id/textView_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btnChoseExport"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_signUp_expert"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ProgressBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

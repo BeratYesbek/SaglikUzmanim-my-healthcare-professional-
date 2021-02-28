@@ -24,7 +24,7 @@
         android:textAlignment="center"
         ></TextView>
     <ProgressBar
-        android:id="@+id/progressBar_send_uri"
+        android:id="@+id/progressBar_upload_video"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:padding="5dp"
@@ -38,7 +38,7 @@
         android:id="@+id/btn_send_uri"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/progressBar_send_uri"
+        android:layout_below="@id/progressBar_upload_video"
         android:text="yükle"
         android:background="@drawable/custom_button4"
         >

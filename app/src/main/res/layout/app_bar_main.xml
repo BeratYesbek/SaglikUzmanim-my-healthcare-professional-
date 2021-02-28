@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ActivityUser.NavigationReceivingServiceActivity">
+    tools:context=".Activity.ActivityUser.NavigationUserActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
@@ -23,7 +22,35 @@
         android:layout_height="?attr/actionBarSize"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ImageView_notification_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_notification"
+                android:layout_gravity="end"
+                >
+            </ImageView>
+            <TextView
+                android:id="@+id/textView_notification_counter_for_user"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:text="5"
+                android:textSize="12dp"
+                android:background="@drawable/blue_circle"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginLeft="12dp"
+                >
+            </TextView>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ImageButton
         android:id="@+id/btn_add_ad"

@@ -7,30 +7,39 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.salikuzmanim.ui.homeFragment"
+        android:name="com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.HomeFragmentForUser"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home_for_user" >
+
+    </fragment>
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.salikuzmanim.ui.profileFragment"
+        android:name="com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.ProfileFragmentForUser"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_profile"
-        />
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_message"
-        android:name="com.example.salikuzmanim.ui.messageFragmentForUser"
+        android:name="com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.MessageFragmentForUser"
         android:label="@string/menu_message"
         tools:layout="@layout/fragment_message_for_user" />
 
     <fragment
         android:id="@+id/nav_list"
-        android:name="com.example.salikuzmanim.ui.listFragment"
+        android:name="com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.JobAdvertisementListFragmentForUser"
         android:label="@string/menu_list"
         tools:layout="@layout/fragment_list" />
     <fragment
         android:id="@+id/nav_apponitment"
-        android:name="com.example.salikuzmanim.ui.appointment_for_user"
+        android:name="com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.AppointmentFragmentForUser"
         android:label="Randevu Taleblerim"
         tools:layout="@layout/fragment_appointment_for_user"
+
         />
+    <activity
+        android:id="@+id/nav_setting"
+        android:name="com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.SettingActivity"
+        android:label="Ayarlar"
+        tools:layout="@layout/activity_setting" />
+
+
 </navigation>

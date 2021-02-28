@@ -1,88 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
     app:layout_behavior="com.github.godness84.appbarsnapbehavior.ScrollingViewBehavior"
-    tools:context=".gridViewClickManager.ReyclerViewShowExpertForUserActivity">
+    tools:context=".Activity.ActivityUser.ReyclerViewShowExpertForUserActivity">
 
-<com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/barColor"
-    android:id="@+id/app_bar">
-
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:id="@+id/toolbar_rc"
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_scrollFlags="scroll|enterAlways" >
+        android:background="@color/barColor">
 
-
-        <Button
-            android:id="@+id/btn_ordinary_something1"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:background="@drawable/custom_button7"
-            android:text="SIRALA"
-            android:textColor="#fff"
-            android:drawableStart="@drawable/ic_order_arrow"
-            android:paddingStart="15dp"
-            android:layout_gravity="left"
-            android:paddingEnd="30dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp">
-        </Button>
-
-        <Button
-            android:id="@+id/btn_filter_something"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_toEndOf="@+id/btn_ordinary_something1"
-            android:background="@drawable/custom_button7"
-            android:text="Filtrele"
-            android:drawableStart="@drawable/ic_filter"
-            android:paddingStart="15dp"
-            android:paddingEnd="30dp"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="35dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="5dp"
-            android:textColor="#fff">
-
-        </Button>
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_rc"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/custom_search_input"
-            android:drawableStart="@drawable/custom_search_icon"
-            android:drawablePadding="20dp"
-            android:textColor="#fff"
-            android:ems="10"
-            android:hint="Ad veya soyada göre arama yapınız"
-            android:inputType="textPersonName"
-            android:paddingStart="10dp"
-            android:textSize="12dp"
-            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
 
-            />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <Button
+                        android:id="@+id/btn_ordinary_something1"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_button7"
+                        android:drawableStart="@drawable/ic_order_arrow"
+                        android:paddingStart="15dp"
+                        android:text="SIRALA"
+                        android:textColor="#fff"></Button>
+
+                    <Button
+                        android:id="@+id/btn_filter_something"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/btn_ordinary_something1"
+                        android:background="@drawable/custom_button7"
+                        android:drawableStart="@drawable/ic_filter"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="30dp"
+                        android:text="Filtrele"
+                        android:textColor="#fff">
+
+                    </Button>
+                </RelativeLayout>
+
+            </RelativeLayout>
 
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
-</com.google.android.material.appbar.AppBarLayout>
-
-
-
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -91,39 +77,39 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/app_bar"
         android:background="@android:color/white"
+
         android:layoutAnimation="@anim/recycler_view_animation_fade_top"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <ProgressBar
-        android:id="@+id/progressBar_rc_for_user"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        ></ProgressBar>
 
     <TextView
         android:id="@+id/textView_reyclerView_for_user"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
         android:padding="5dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-         />
+        android:textSize="20dp" />
 
     <ImageView
         android:id="@+id/imageView_sad_for_user"
-        android:layout_width="159dp"
-        android:layout_height="119dp"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="150dp"
         app:srcCompat="@drawable/sad" />
+
     <FrameLayout
         android:id="@+id/framelayout_for_order_expert"
         android:layout_width="280dp"
         android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+
         android:layout_gravity="right">
 
     </FrameLayout>
@@ -140,10 +126,18 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar">
 
     </FrameLayout>
 
+    <ProgressBar
+        android:id="@+id/progressBar_rc_for_user"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"></ProgressBar>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

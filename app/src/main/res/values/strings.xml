@@ -11,21 +11,126 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Anasayfa</string>
     <string name="menu_profile">Profilim</string>
     <string name="menu_message">Mesajlarım</string>
     <string name="menu_list">İlanlarım</string>
 
     <string-array name="choiceLocation">
-        <item>İstanbul</item>
+        <item>İstanbul </item>
+        <item>Ankara </item>
+        <item>İzmir </item>
+        <item>Antalya </item>
+        <item>Adana </item>
 
-        <item>Ankara</item>
+        <item>Adıyaman </item>
+        <item>Ağrı </item>
+        <item>Amasya </item>
 
-        <item>İzmir</item>
 
+        <item>Artvin </item>
+        <item>Aydın </item>
+        <item>Balıkesir </item>
+        <item>Bilecik </item>
+        <item>Bingöl </item>
+        <item>Bitlis </item>
+        <item>Burdur </item>
+        <item>Bursa </item>
+        <item>Çanakkale </item>
+
+        <item>Çankırı </item>
+        <item>Çorum </item>
+        <item>Denizli </item>
+        <item>Diyarbakır </item>
+        <item>Edirne </item>
+        <item>Elâzığ </item>
+        <item>Erzincan </item>
+        <item>Erzurum </item>
+        <item>Eskişehir </item>
+        <item>Gaziantep </item>
+        <item>Giresun </item>
+        <item>Gümüşhane </item>
+        <item>Hakkâri </item>
+        <item>Hatay </item>
+        <item>Isparta </item>
+
+        <item>Mersin </item>
+
+
+        <item>Kars </item>
+        <item>Kastamonu </item>
+        <item>Kayseri </item>
+        <item>Kırklareli </item>
+        <item>Kırşehir </item>
+        <item>Kocaeli </item>
+        <item>Konya </item>
+        <item>Kütahya </item>
+        <item>Malatya </item>
+        <item>Manisa </item>
+        <item>Kahramanmaraş </item>
+        <item>Mardin </item>
+
+        <item>Muğla </item>
+        <item>Muş </item>
+        <item>Nevşehir </item>
+        <item>Niğde </item>
+        <item>Ordu </item>
+        <item>Rize </item>
+        <item>Sakarya </item>
+        <item>Samsun </item>
+        <item>Siirt </item>
+        <item>Sinop </item>
+        <item>Sivas </item>
+        <item>Tekirdağ </item>
+        <item>Tokat </item>
+        <item>Trabzon </item>
+        <item>Tunceli </item>
+
+        <item>Şanlıurfa </item>
+        <item>Uşak </item>
+        <item>Van </item>
+        <item>Yozgat </item>
+        <item>Zonguldak </item>
+        <item>Aksaray </item>
+        <item>Bayburt </item>
+        <item>Karaman </item>
+        <item>Kırıkkale </item>
+        <item>Batman </item>
+        <item>Şırnak </item>
+        <item>Bartın </item>
+        <item>Ardahan </item>
+        <item>Iğdır </item>
+        <item>Yalova </item>
+        <item>Karabük </item>
+        <item>Kilis </item>
+        <item>Osmaniye </item>
+        <item>Düzce </item>
     </string-array>
 
     <string-array name="choiceDoctorDepartmant">
+        <item>Acil tıp</item>
+        <item>Adli tıp</item>
+        <item>Aile hekimliği</item>
+        <item>Çocuk ve ergen psikiyatrisi</item>
+        <item>Çocuk hastalıkları</item>
+        <item>Dermatoloji</item>
+        <item>Fiziksel tıp ve rehabilitasyon</item>
+        <item>Enfeksiyon hastalıkları</item>
+        <item> Göğüs hastalıkları</item>
+        <item>Dahiliye</item>
+        <item>Kardiyoloji</item>
+        <item> Anesteziyoloji ve reanimasyon</item>
+        <item>Beyin ve sinir cerrahisi</item>
+        <item>Çocuk cerrahisi</item>
+        <item>Genel cerrahi</item>
+        <item>Göğüs cerahisi</item>
+        <item> Göz hastalıkları</item>
+        <item> Kadın Hastalıkları ve Doğum</item>
+        <item>Kalp ve Damar Cerahisi</item>
+        <item> Ortopedi ve Travmatoloji</item>
+        <item>Estetik cerrahi</item>
+        <item>Üroloji</item>
+
         <item>kalp damar cerrahi</item>
         <item>beyin cerrahi</item>
         <item>fizik tedavi</item>
@@ -34,10 +139,30 @@
 
 
     <string-array name="choiceExpert">
-        <item>kalp damar cerrahi</item>
-        <item>beyin cerrahi</item>
-        <item>fizik tedavi</item>
-        <item>dahiliye</item>
+        <item>Acil tıp</item>
+        <item>Adli tıp</item>
+        <item>Aile hekimliği</item>
+        <item>Çocuk ve ergen psikiyatrisi</item>
+        <item>Çocuk hastalıkları</item>
+        <item>Dermatoloji</item>
+        <item>Fiziksel tıp ve rehabilitasyon</item>
+        <item>Enfeksiyon hastalıkları</item>
+        <item> Göğüs hastalıkları</item>
+        <item>Dahiliye</item>
+        <item>Kardiyoloji</item>
+        <item> Anesteziyoloji ve reanimasyon</item>
+        <item>Beyin ve sinir cerrahisi</item>
+        <item>Çocuk cerrahisi</item>
+        <item>Genel cerrahi</item>
+        <item>Göğüs cerahisi</item>
+        <item> Göz hastalıkları</item>
+        <item> Kadın Hastalıkları ve Doğum</item>
+        <item>Kalp ve Damar Cerahisi</item>
+        <item> Ortopedi ve Travmatoloji</item>
+        <item>Estetik cerrahi</item>
+        <item>Üroloji</item>
+        <item>Piskoloji</item>
+        <item>Hasta Bakıcı</item>
         <item>Diyetisyen</item>
         <item>Fizyoterapist</item>
         <item>Hemşire</item>
