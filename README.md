@@ -58,7 +58,7 @@ Merhaba, bu projenin amacı bir online hastane gibi. Eğer sizler bir sağlık p
 
 4-) Biri uzmana randevu talebi gönderir ve talep uzman tarafından onaylanırsa kullanıcıdan ödeme yapması beklenilir eğer ödeme yapılırsa görüntülü konuşma gerçekleşir.
 
-                                              
+-------------------------------------------------------- USER UI -------------------------------------------------------------------------------------------------                                              
                                               
 <img src="https://user-images.githubusercontent.com/77804034/116689786-29342e80-a9c1-11eb-96d1-488635c7703a.jpg" width="500" height="850">
 
@@ -99,6 +99,10 @@ Merhaba, bu projenin amacı bir online hastane gibi. Eğer sizler bir sağlık p
 
 <img src="https://user-images.githubusercontent.com/77804034/116689724-16b9f500-a9c1-11eb-89ab-ea91dfb0411b.jpg" width="500" height="850">
 
+
+
+
+------------------------------------------------------- EXPERT UI ----------------------------------------------------------------------------------
 
 
 
