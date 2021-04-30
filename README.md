@@ -39,7 +39,7 @@ The expert can look that has been published of job advertisements by users.
 
 5-) Someone be able to send appointment to expert. If expert approve appointment and User pay to expert appointment price they can be meeting with jitsi meet
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 TURKISH
 
