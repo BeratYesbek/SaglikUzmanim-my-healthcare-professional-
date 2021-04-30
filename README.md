@@ -2,7 +2,7 @@
 "Sağlık Uzmanım for android"
 
 
-<img src="https://user-images.githubusercontent.com/77804034/116689695-0efa5080-a9c1-11eb-9510-a2848856d624.jpg" width="400" height="700">
+<img src="https://user-images.githubusercontent.com/77804034/116689695-0efa5080-a9c1-11eb-9510-a2848856d624.jpg" width="500" height="750">
 ![13](https://user-images.githubusercontent.com/77804034/116689695-0efa5080-a9c1-11eb-9510-a2848856d624.jpg | width=100))
 
 ![11](https://user-images.githubusercontent.com/77804034/116689697-102b7d80-a9c1-11eb-82de-06fdca03f028.jpg)
