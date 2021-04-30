@@ -4,8 +4,8 @@
                                               SAĞLIK UZMANIM  - MY HEALTH EXPERT
 
 
-WARNING 
- This project include spaghetti code and SOLID principle with together 
+WARNING: 
+ This project includes spaghetti code and SOLID principle with together
 
 Hasta girişi (patient entrance)
 email:   berat@gmail.com
