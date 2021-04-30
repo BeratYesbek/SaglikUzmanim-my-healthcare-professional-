@@ -1,6 +1,7 @@
 # SaglikUzmanim
 "Sağlık Uzmanım for android"
 
+<img src="https://user-images.githubusercontent.com/77804034/116689786-29342e80-a9c1-11eb-96d1-488635c7703a.jpg" width="500" height="850">
 
 <img src="https://user-images.githubusercontent.com/77804034/116689695-0efa5080-a9c1-11eb-9510-a2848856d624.jpg" width="500" height="850">
 
@@ -52,7 +53,6 @@
 <img src="https://user-images.githubusercontent.com/77804034/116689783-289b9800-a9c1-11eb-91e8-decb5b5d82fe.jpg" width="500" height="850">
 
 
-<img src="https://user-images.githubusercontent.com/77804034/116689786-29342e80-a9c1-11eb-96d1-488635c7703a.jpg" width="500" height="850">
 
 <img src="https://user-images.githubusercontent.com/77804034/116689797-2d604c00-a9c1-11eb-9fc8-7609c0bacceb.jpg" width="500" height="850">
 
