@@ -18,18 +18,18 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.AppointmentAdapter.AdapterAppointmentForExpert;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.AppointmentManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Appointment;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseAppointmentDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.AppointmentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetAppointmentListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetQueryListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -96,7 +96,7 @@ public class AppointmentFragmentForExpert extends Fragment {
     public void getAppointmentData() {
 
 
-        AppointmentManager appointmentManager = new AppointmentManager(new FireBaseAppointmentDal());
+        AppointmentManager appointmentManager = new AppointmentManager(new AppointmentDal());
         appointmentManager.getData(null, new IGetAppointmentListener() {
             @Override
             public void onSuccess(ArrayList<Appointment> appointmentArrayList) {
@@ -118,7 +118,7 @@ public class AppointmentFragmentForExpert extends Fragment {
 
     public void getUserData() {
 
-        UserManager userManager = new UserManager(new FireBaseUserDal());
+        UserManager userManager = new UserManager(new UserDal());
         userManager.getAllUserQuery(new IGetQueryListener() {
             @Override
             public void onSuccess(QuerySnapshot queryDocument) {

@@ -2,11 +2,15 @@
   <library name="Gradle: com.squareup.duktape:duktape-android:1.3.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464c089c972625cf562a6c4c6634286a/jetified-duktape-android-1.3.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fb306f7c6e3983ef2ad0561f3887158/jetified-duktape-android-1.3.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464c089c972625cf562a6c4c6634286a/jetified-duktape-android-1.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464c089c972625cf562a6c4c6634286a/jetified-duktape-android-1.3.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464c089c972625cf562a6c4c6634286a/jetified-duktape-android-1.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fb306f7c6e3983ef2ad0561f3887158/jetified-duktape-android-1.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fb306f7c6e3983ef2ad0561f3887158/jetified-duktape-android-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fb306f7c6e3983ef2ad0561f3887158/jetified-duktape-android-1.3.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.duktape/duktape-android/1.3.0/ad6481ee716c52dca5dae87fedc7a8fdf698ca0a/duktape-android-1.3.0-javadoc.jar!/" />

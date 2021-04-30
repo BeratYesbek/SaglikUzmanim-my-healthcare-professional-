@@ -8,22 +8,22 @@ import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 
 public class NotificationManager implements INotificationManager {
 
-    private INotificationDal _iNotificationDal;
+    private INotificationDal _notificationDal;
 
-    public NotificationManager(INotificationDal iNotificationDal) {
+    public NotificationManager(INotificationDal notificationDal) {
 
-        _iNotificationDal = iNotificationDal;
+        _notificationDal = notificationDal;
     }
 
 
     @Override
     public void addData(Notification entity, IResult iResult) {
-        _iNotificationDal.addData(entity,iResult);
+        _notificationDal.addData(entity,iResult);
     }
 
     @Override
     public void updateData(Notification entity, IResult iResult) {
-        _iNotificationDal.updateData(entity,iResult);
+        _notificationDal.updateData(entity,iResult);
     }
 
     @Override
@@ -33,6 +33,6 @@ public class NotificationManager implements INotificationManager {
 
     @Override
     public void getData(Notification entity, IGetNotificationListener notificationListener) {
-        _iNotificationDal.getData(entity,notificationListener);
+        _notificationDal.getData(entity,notificationListener);
     }
 }

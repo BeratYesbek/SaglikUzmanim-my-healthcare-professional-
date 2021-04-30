@@ -9,15 +9,15 @@ import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 
 public class ChatManager implements IChatManager<Chat, IResult, IGetChatListener> {
 
-    private IChatDal _iChatDal;
-    public ChatManager(IChatDal iChatDal){
-        this._iChatDal = iChatDal;
+    private IChatDal _chatDal;
+    public ChatManager(IChatDal chatDal){
+        this._chatDal = chatDal;
     }
 
 
     @Override
     public void addData(Chat entity, IResult iResult) {
-        _iChatDal.addData(entity,iResult);
+        _chatDal.addData(entity,iResult);
     }
 
     @Override
@@ -32,18 +32,18 @@ public class ChatManager implements IChatManager<Chat, IResult, IGetChatListener
 
     @Override
     public void getData(Chat entity, IGetChatListener iGetListener) {
-        _iChatDal.getData(entity,iGetListener);
+        _chatDal.getData(entity,iGetListener);
     }
 
     @Override
     public void seenMessages(String userID) {
-        _iChatDal.seenMessages(userID);
+        _chatDal.seenMessages(userID);
     }
 
 
     @Override
     public void getMessageForList(String whoSend, IGetMessageArrayListListener iGetListener) {
-        _iChatDal.getMessageForList(whoSend,iGetListener);
+        _chatDal.getMessageForList(whoSend,iGetListener);
     }
 
 

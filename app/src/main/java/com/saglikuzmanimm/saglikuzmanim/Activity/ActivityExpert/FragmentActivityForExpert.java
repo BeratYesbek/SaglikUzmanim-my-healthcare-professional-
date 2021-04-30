@@ -17,22 +17,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.MainChoiceActivity;
 import com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.SettingActivity;
 import com.saglikuzmanimm.saglikuzmanim.Activity.NotificationTabLayout.NotificationTabLayoutActivity;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.TokenManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Notification;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseNotificationDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseTokenDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.NotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.TokenDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetNotificationListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.SingleChoiceLister;
 import com.saglikuzmanimm.saglikuzmanim.R;
 import com.saglikuzmanimm.saglikuzmanim.ui.ExpertMainUI.MainPageFragmentForExpert;
 import com.saglikuzmanimm.saglikuzmanim.ui.ExpertMainUI.SectionsPagerAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -103,7 +103,7 @@ public class FragmentActivityForExpert extends AppCompatActivity implements Sing
     }
 
     private void updateTokens() {
-        TokenManager tokenManager = new TokenManager(new FireBaseTokenDal());
+        TokenManager tokenManager = new TokenManager(new TokenDal());
         tokenManager.getToken(getApplicationContext(), "Expert_users");
     }
 
@@ -115,7 +115,7 @@ public class FragmentActivityForExpert extends AppCompatActivity implements Sing
 
     private void getNotificationCounter() {
 
-        NotificationManager notificationManager = new NotificationManager(new FireBaseNotificationDal());
+        NotificationManager notificationManager = new NotificationManager(new NotificationDal());
         notificationManager.getData(null, new IGetNotificationListener() {
             @Override
             public void onSuccess(ArrayList<Notification> notificationArrayList) {

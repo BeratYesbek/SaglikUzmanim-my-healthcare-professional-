@@ -8,19 +8,19 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityExpert.FragmentActivityForExpert;
 import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityUser.NavigationUserActivity;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetExpertListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -40,7 +40,7 @@ public class MainConnectionControlActivity extends AppCompatActivity {
             if(firebaseUser != null){
                 Expert expert = new Expert();
                 expert.set_ID(firebaseUser.getUid());
-                ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+                ExpertManager expertManager = new ExpertManager(new ExpertDal());
                 expertManager.getData(expert, new IGetExpertListener() {
                     @Override
                     public void onSuccess(ArrayList<Expert> expertArrayList) {
@@ -51,7 +51,7 @@ public class MainConnectionControlActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailed(Exception exception) {
-                        UserManager userManager = new UserManager(new FireBaseUserDal());
+                        UserManager userManager = new UserManager(new UserDal());
                         userManager.getData(null, new IGetUserListener() {
                             @Override
                             public void onSuccess(ArrayList<User> userArrayList) {

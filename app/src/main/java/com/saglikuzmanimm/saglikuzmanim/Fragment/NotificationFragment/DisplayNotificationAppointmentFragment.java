@@ -19,13 +19,13 @@ import com.saglikuzmanimm.saglikuzmanim.Activity.NotificationTabLayout.Notificat
 import com.saglikuzmanimm.saglikuzmanim.Adapter.OtherAdapters.AdapterDisplayNotification;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Notification;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseNotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.NotificationDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetNotificationListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IRecyclerViewClick;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.AppointmentFragmentForUser;
 import com.saglikuzmanimm.saglikuzmanim.ui.ExpertMainUI.AppointmentFragmentForExpert;
+import com.saglikuzmanimm.saglikuzmanim.ui.UserMainUI.AppointmentFragmentForUser;
 
 import java.util.ArrayList;
 
@@ -82,7 +82,7 @@ public class DisplayNotificationAppointmentFragment extends Fragment implements 
     }
 
    private void getNotificationDate(){
-       NotificationManager notificationManager = new NotificationManager(new FireBaseNotificationDal());
+       NotificationManager notificationManager = new NotificationManager(new NotificationDal());
        notificationManager.getData(null, new IGetNotificationListener() {
            @Override
            public void onSuccess(ArrayList<Notification> notificationArrayList) {
@@ -100,7 +100,7 @@ public class DisplayNotificationAppointmentFragment extends Fragment implements 
 
     }
     private void updateSeenNotification(){
-        NotificationManager notificationManager = new NotificationManager(new FireBaseNotificationDal());
+        NotificationManager notificationManager = new NotificationManager(new NotificationDal());
 
         for(int i=0; i<_notificationArrayList.size(); i++){
             Notification notification = _notificationArrayList.get(i);

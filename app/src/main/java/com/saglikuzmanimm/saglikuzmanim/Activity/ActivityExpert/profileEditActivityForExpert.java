@@ -21,12 +21,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 public class profileEditActivityForExpert extends AppCompatActivity {
@@ -96,7 +96,7 @@ public class profileEditActivityForExpert extends AppCompatActivity {
             expert.set_about(about);
             expert.set_ID(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-            ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+            ExpertManager expertManager = new ExpertManager(new ExpertDal());
             expertManager.updateExpertProfileImage(expert, new IResult() {
                 @Override
                 public void onSuccess() {

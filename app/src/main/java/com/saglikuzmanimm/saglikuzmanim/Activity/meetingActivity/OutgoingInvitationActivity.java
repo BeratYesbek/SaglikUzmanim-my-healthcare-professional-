@@ -20,19 +20,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
-import com.saglikuzmanimm.saglikuzmanim.Constants.Constants;
-import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
-import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
-import com.saglikuzmanimm.saglikuzmanim.Network.ApiClient;
-import com.saglikuzmanimm.saglikuzmanim.Network.IApiService;
-import com.saglikuzmanimm.saglikuzmanim.JitsiMeet.PreferenceManager;
-import com.saglikuzmanimm.saglikuzmanim.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
+import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
+import com.saglikuzmanimm.saglikuzmanim.Constants.Constants;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
+import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
+import com.saglikuzmanimm.saglikuzmanim.JitsiMeet.PreferenceManager;
+import com.saglikuzmanimm.saglikuzmanim.Network.ApiClient;
+import com.saglikuzmanimm.saglikuzmanim.Network.IApiService;
+import com.saglikuzmanimm.saglikuzmanim.R;
 import com.squareup.picasso.Picasso;
 
 import org.jitsi.meet.sdk.JitsiMeetActivity;
@@ -210,7 +210,7 @@ public class OutgoingInvitationActivity extends AppCompatActivity {
     public void getUserData() {
 
 
-        UserManager userManager = new UserManager(new FireBaseUserDal());
+        UserManager userManager = new UserManager(new UserDal());
         userManager.getData(null, new IGetUserListener() {
             @Override
             public void onSuccess(ArrayList<User> userArrayList) {

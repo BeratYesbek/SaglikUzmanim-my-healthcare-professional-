@@ -15,14 +15,14 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.firestore.Query;
+import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityUser.ReyclerViewShowExpertForUserActivity;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
-import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Collection;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetExpertListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityUser.ReyclerViewShowExpertForUserActivity;
-import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 
@@ -87,7 +87,7 @@ public class CollectionExpertFragment extends Fragment {
                 if (index != -1) {
                     String accordingToWhat;
                     Object orderby;
-                    ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+                    ExpertManager expertManager = new ExpertManager(new ExpertDal());
                     Collection collection = new Collection();
                     switch (index) {
 

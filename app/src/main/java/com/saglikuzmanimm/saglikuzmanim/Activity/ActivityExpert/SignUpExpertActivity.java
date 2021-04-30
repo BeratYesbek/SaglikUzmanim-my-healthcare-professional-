@@ -26,7 +26,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceExpertFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.SingleChoiceLister;
@@ -141,7 +141,7 @@ public class SignUpExpertActivity extends AppCompatActivity implements SingleCho
         }
     }
     private void createAccount(String firstName,String lastName,String email,String password,String tcNumber){
-        ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+        ExpertManager expertManager = new ExpertManager(new ExpertDal());
         expertManager.createExpertAccount(new Expert(firstName, lastName, email, password, "expert", tcNumber, department, imageDiploma, imageIdCard), new IResult() {
             @Override
             public void onSuccess() {

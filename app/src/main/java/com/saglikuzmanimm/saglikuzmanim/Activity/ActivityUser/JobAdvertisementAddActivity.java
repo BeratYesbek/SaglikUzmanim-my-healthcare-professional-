@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.JobAdvertisementManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.JobAdvertisement;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseJobAdvertisementDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.JobAdvertisementDal;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceExpertFragment;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceLocationFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
@@ -80,7 +80,7 @@ public class JobAdvertisementAddActivity extends AppCompatActivity implements Si
             UUID uuid = UUID.randomUUID();
             jobAdvertisementID = uuid.toString();
             if (jobAdvertisementID != null) {
-                JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new FireBaseJobAdvertisementDal());
+                JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new JobAdvertisementDal());
                 jobAdvertisementManager.addData(new JobAdvertisement(title, explaination, department, location, jobAdvertisementID), new IResult() {
                     @Override
                     public void onSuccess() {

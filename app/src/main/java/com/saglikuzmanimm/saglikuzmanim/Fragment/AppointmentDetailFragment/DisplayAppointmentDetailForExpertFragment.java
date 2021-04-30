@@ -22,19 +22,19 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.AppointmentManager;
 import com.saglikuzmanimm.saglikuzmanim.Calculator.AppointmentTimeCalculator;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Appointment;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Notification;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
 import com.saglikuzmanimm.saglikuzmanim.Constants.Messages;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseAppointmentDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseNotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.AppointmentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.NotificationDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.Notification.AppointmentSendNotification;
-import com.saglikuzmanimm.saglikuzmanim.Time.TimeCalculator;
-import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.R;
+import com.saglikuzmanimm.saglikuzmanim.Time.TimeCalculator;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -157,7 +157,7 @@ public class DisplayAppointmentDetailForExpertFragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
 
 
-                AppointmentManager appointmentManager = new AppointmentManager(new FireBaseAppointmentDal());
+                AppointmentManager appointmentManager = new AppointmentManager(new AppointmentDal());
                 appointmentManager.updateData(new Appointment(_appointment.get_documentID(), null, true, null, null), new IResult() {
                     @Override
                     public void onSuccess() {
@@ -197,7 +197,7 @@ public class DisplayAppointmentDetailForExpertFragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
 
 
-                AppointmentManager appointmentManager = new AppointmentManager(new FireBaseAppointmentDal());
+                AppointmentManager appointmentManager = new AppointmentManager(new AppointmentDal());
                 appointmentManager.updateData(new Appointment(_appointment.get_documentID(), null, null, null, true), new IResult() {
                     @Override
                     public void onSuccess() {
@@ -380,7 +380,7 @@ public class DisplayAppointmentDetailForExpertFragment extends Fragment {
 
         String senderID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager notificationManager = new com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager(new FireBaseNotificationDal());
+        com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager notificationManager = new com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager(new NotificationDal());
 
         notificationManager.addData(new Notification(_user.get_ID(), senderID, messageBody, messageTitle, false), new IResult() {
             @Override

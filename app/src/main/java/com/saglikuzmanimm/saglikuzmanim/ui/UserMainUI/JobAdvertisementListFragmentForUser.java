@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.JobAdvertisementAdapter.AdapterJobAdvertisementDisplayUser;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.JobAdvertisementManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.JobAdvertisement;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseJobAdvertisementDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.JobAdvertisementDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetJobAdvertisementListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
 
@@ -73,17 +73,18 @@ public class JobAdvertisementListFragmentForUser extends Fragment {
      
 
 
-            JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new FireBaseJobAdvertisementDal());
+            JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new JobAdvertisementDal());
             jobAdvertisementManager.getData(null, new IGetJobAdvertisementListener() {
                 @Override
                 public void onSuccess(ArrayList<JobAdvertisement> jobAdvertisementArrayList) {
                     advertisementArrayList.removeAll(advertisementArrayList);
                     advertisementArrayList.clear();
                     advertisementArrayList.addAll(jobAdvertisementArrayList);
-                    adapterJobAdvertisementDisplayUser.notifyDataSetChanged();
-                    recyclerView.scheduleLayoutAnimation();
                     progressBar_jobAdvertisement_list.setVisibility(View.INVISIBLE);
                     textView_fragment_list.setVisibility(View.INVISIBLE);
+                    adapterJobAdvertisementDisplayUser.notifyDataSetChanged();
+                    recyclerView.scheduleLayoutAnimation();
+
                 }
 
                 @Override
@@ -94,37 +95,6 @@ public class JobAdvertisementListFragmentForUser extends Fragment {
                 }
             });
         }
-
-/*
-            FireBaseJobAdvertisementDal fireBaseJobAdvertisementDal = new FireBaseJobAdvertisementDal();
-            fireBaseJobAdvertisementDal.getJobAdvertisement(new IGetListDataListener() {
-                @Override
-                public void onSuccess(ArrayList entity) {
-                    try {
-                        advertisementArrayList.removeAll(advertisementArrayList);
-                        advertisementArrayList.addAll(entity);
-                        adapterJobAdvertisementDisplayUser.notifyDataSetChanged();
-                        recyclerView.scheduleLayoutAnimation();
-                        progressBar_jobAdvertisement_list.setVisibility(View.INVISIBLE);
-                        textView_fragment_list.setVisibility(View.INVISIBLE);
-
-                    } catch (Exception e) {
-
-                    }
-                }
-
-                @Override
-                public void onFailed(Exception exception) {
-                    textView_fragment_list.setVisibility(View.VISIBLE);
-                    textView_fragment_list.setText("Herhangi bir ilan bulunmamaktadır");
-                    progressBar_jobAdvertisement_list.setVisibility(View.INVISIBLE);
-                }
-            });
-
-        } catch (Exception e) {
-
-        }
-*/
 }
 
 

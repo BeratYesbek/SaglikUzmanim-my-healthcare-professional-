@@ -26,22 +26,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.MessageActivity;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.AppointmentManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.NotificationManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Appointment;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
-import com.saglikuzmanimm.saglikuzmanim.Constants.Messages;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Notification;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseAppointmentDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseNotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.Constants.Messages;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.AppointmentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.NotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.Fragment.DisplayExpertProfileFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.Notification.AppointmentSendNotification;
 import com.saglikuzmanimm.saglikuzmanim.R;
 import com.saglikuzmanimm.saglikuzmanim.Time.DatePickerManager;
-import com.saglikuzmanimm.saglikuzmanim.Fragment.DisplayExpertProfileFragment;
-import com.google.firebase.Timestamp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -282,7 +282,7 @@ public class AdapterShowExpertToUser extends RecyclerView.Adapter<AdapterShowExp
 
         String senderID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        AppointmentManager appointmentManager = new AppointmentManager(new FireBaseAppointmentDal());
+        AppointmentManager appointmentManager = new AppointmentManager(new AppointmentDal());
         Appointment appointment = new Appointment(senderID, expert.get_expertUid(), null, appointmentID, null,
                 false, false, false, timestamp,
                 null, expert.get_appointmentPrice());
@@ -307,7 +307,7 @@ public class AdapterShowExpertToUser extends RecyclerView.Adapter<AdapterShowExp
 
         AppointmentSendNotification.sendAppointmentRequestNotification(token,receiverID);
 
-        NotificationManager notificationManager = new NotificationManager(new FireBaseNotificationDal());
+        NotificationManager notificationManager = new NotificationManager(new NotificationDal());
         notificationManager.addData(new Notification(receiverID, senderID, Messages.APPOINTMENT_MESSAGES_DEMAND, Messages.APPOINTMENT_MESSAGE_TITLE, false), new IResult() {
             @Override
             public void onSuccess() {

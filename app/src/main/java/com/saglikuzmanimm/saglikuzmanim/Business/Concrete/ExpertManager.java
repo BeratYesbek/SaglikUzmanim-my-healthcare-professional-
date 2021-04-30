@@ -1,8 +1,8 @@
 package com.saglikuzmanimm.saglikuzmanim.Business.Concrete;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Abstract.IExpertManager;
-import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Collection;
+import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
 import com.saglikuzmanimm.saglikuzmanim.DataAccess.Abstract.IExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetExpertListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetQueryListener;
@@ -12,10 +12,10 @@ import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 public class ExpertManager implements IExpertManager<Expert,IResult,IGetListener> {
 
 
-    private IExpertDal _iExpertDal;
+    private IExpertDal _expertDal;
 
-    public ExpertManager(IExpertDal iExpertDal) {
-        this._iExpertDal = iExpertDal;
+    public ExpertManager(IExpertDal expertDal) {
+        this._expertDal = expertDal;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ExpertManager implements IExpertManager<Expert,IResult,IGetListener
 
     @Override
     public void updateData(Expert entity, IResult iResult) {
-        _iExpertDal.updateData(entity,iResult);
+        _expertDal.updateData(entity,iResult);
     }
 
     @Override
@@ -35,41 +35,41 @@ public class ExpertManager implements IExpertManager<Expert,IResult,IGetListener
 
     @Override
     public void getData(Expert entity, IGetExpertListener iGetListener) {
-        _iExpertDal.getData(entity,iGetListener);
+        _expertDal.getData(entity,iGetListener);
     }
 
     @Override
     public void getExpertById(String expertUid, IGetListener iGetListener) {
-        _iExpertDal.getExpertById(expertUid, iGetListener);
+        _expertDal.getExpertById(expertUid, (IGetExpertListener) iGetListener);
     }
 
 
     @Override
     public void createExpertAccount(Expert entity, IResult iResult) {
-        _iExpertDal.createExpertAccount(entity,iResult);
+        _expertDal.createExpertAccount(entity,iResult);
     }
 
     @Override
     public void updateExpertProfileImage(Expert entity, IResult iResult) {
         System.out.println(15);
-        _iExpertDal.updateExpertProfileImage(entity,iResult);
+        _expertDal.updateExpertProfileImage(entity,iResult);
     }
 
 
     @Override
     public void uploadExpertVideo(Expert entity, IResult iResult) {
-        _iExpertDal.uploadExpertVideo(entity, iResult);
+        _expertDal.uploadExpertVideo(entity, iResult);
     }
 
 
     @Override
     public void getExpertQuery(IGetQueryListener iGetQueryListener) {
-        _iExpertDal.getExpertQuery(iGetQueryListener);
+        _expertDal.getExpertQuery(iGetQueryListener);
     }
 
     @Override
     public void getAllExpert(Collection entity, IGetListener iGetListener) {
-        _iExpertDal.getAllExpert(entity, iGetListener);
+        _expertDal.getAllExpert(entity, (IGetExpertListener) iGetListener);
     }
 }
 

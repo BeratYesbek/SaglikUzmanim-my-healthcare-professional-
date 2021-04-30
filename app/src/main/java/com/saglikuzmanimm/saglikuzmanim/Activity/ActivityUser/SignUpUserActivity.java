@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
 
@@ -95,7 +95,7 @@ public class SignUpUserActivity extends  AppCompatActivity   {
                 progressBar.setVisibility(View.VISIBLE);
 
 
-                UserManager userManager = new UserManager(new FireBaseUserDal());
+                UserManager userManager = new UserManager(new UserDal());
                 userManager.createUserAccount(new User(_firstName, _lastName, _email, _password, "user", _tcNumber), new IResult() {
                     @Override
                     public void onSuccess() {

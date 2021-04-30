@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.OtherAdapters.AdapterDisplayComment;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.CommentManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
@@ -35,13 +36,12 @@ import com.saglikuzmanimm.saglikuzmanim.Calculator.Calculator;
 import com.saglikuzmanimm.saglikuzmanim.Calculator.CalculatorExpertPoint;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Comment;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseCommentDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.CommentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetCommentListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetExpertListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -196,7 +196,7 @@ public class DisplayExpertProfileFragment extends Fragment {
     void getExpertData(String expertUid) {
 
 
-        ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+        ExpertManager expertManager = new ExpertManager(new ExpertDal());
         expertManager.getExpertById(expertUid, new IGetExpertListener() {
             @Override
             public void onSuccess(ArrayList<Expert> expertArrayList) {
@@ -237,7 +237,7 @@ public class DisplayExpertProfileFragment extends Fragment {
         Comment comment = new Comment();
         comment.set_receiverID(expertUid);
 
-        CommentManager commentManager = new CommentManager(new FireBaseCommentDal());
+        CommentManager commentManager = new CommentManager(new CommentDal());
         commentManager.getData(comment, new IGetCommentListener() {
             @Override
             public void onSuccess(ArrayList<Comment> comments, List<Float> point) {
@@ -262,7 +262,7 @@ public class DisplayExpertProfileFragment extends Fragment {
         Expert expert = new Expert();
         expert.set_ID(firebaseAuth.getCurrentUser().getUid());
         expert.set_point(average);
-        ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+        ExpertManager expertManager = new ExpertManager(new ExpertDal());
         expertManager.updateData(expert, new IResult() {
             @Override
             public void onSuccess() {

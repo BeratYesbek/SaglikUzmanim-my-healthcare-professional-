@@ -20,7 +20,7 @@ import com.saglikuzmanimm.saglikuzmanim.Adapter.AdapterMessages.AdapterMessages;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ChatManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.MessageArrayList;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Person;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseChatDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ChatDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetMessageArrayListListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IRecyclerViewClick;
 import com.saglikuzmanimm.saglikuzmanim.R;
@@ -98,7 +98,7 @@ public class MessageListActivityForExpert extends AppCompatActivity implements I
     public void getUserChatData() {
 
 
-        ChatManager chatManager = new ChatManager(new FireBaseChatDal());
+        ChatManager chatManager = new ChatManager(new ChatDal());
         chatManager.getMessageForList("user", new IGetMessageArrayListListener() {
             @Override
             public void onSuccess(MessageArrayList messageArrayLists) {

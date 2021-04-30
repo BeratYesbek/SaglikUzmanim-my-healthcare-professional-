@@ -23,6 +23,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.MainChoiceActivity;
 import com.saglikuzmanimm.saglikuzmanim.Activity.CommonActivity.SettingActivity;
 import com.saglikuzmanimm.saglikuzmanim.Activity.NotificationTabLayout.NotificationTabLayoutActivity;
@@ -31,14 +33,12 @@ import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.TokenManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Notification;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseNotificationDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseTokenDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.NotificationDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.TokenDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetNotificationListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -128,13 +128,13 @@ public class NavigationUserActivity extends AppCompatActivity {
     }
 
     private void updateTokens() {
-        TokenManager tokenManager = new TokenManager(new FireBaseTokenDal());
+        TokenManager tokenManager = new TokenManager(new TokenDal());
         tokenManager.getToken(getApplicationContext(), "users");
     }
 
     private void getNotificationCounter() {
 
-        NotificationManager notificationManager = new NotificationManager(new FireBaseNotificationDal());
+        NotificationManager notificationManager = new NotificationManager(new NotificationDal());
         notificationManager.getData(null, new IGetNotificationListener() {
             @Override
             public void onSuccess(ArrayList<Notification> notificationArrayList) {
@@ -172,7 +172,7 @@ public class NavigationUserActivity extends AppCompatActivity {
 
     private void getData() {
         // this method get data for nav_header from database
-        UserManager userManager = new UserManager(new FireBaseUserDal());
+        UserManager userManager = new UserManager(new UserDal());
         userManager.getData(null, new IGetUserListener() {
             @Override
             public void onSuccess(ArrayList<User> userArrayList) {

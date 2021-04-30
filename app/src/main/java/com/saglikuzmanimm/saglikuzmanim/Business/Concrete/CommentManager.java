@@ -9,15 +9,15 @@ import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 public class CommentManager implements ICommentManager {
 
 
-    private ICommentDal _iCommentDal;
+    private ICommentDal _commentDal;
 
     public CommentManager(ICommentDal commentDal) {
-        this._iCommentDal = commentDal;
+        this._commentDal = commentDal;
     }
 
     @Override
     public void addData(Comment entity, IResult iResult) {
-        _iCommentDal.addData(entity, iResult);
+        _commentDal.addData(entity, iResult);
     }
 
     @Override
@@ -32,6 +32,6 @@ public class CommentManager implements ICommentManager {
 
     @Override
     public void getData(Comment entity, IGetCommentListener iGetListener) {
-        _iCommentDal.getData(entity, iGetListener);
+        _commentDal.getData(entity, iGetListener);
     }
 }

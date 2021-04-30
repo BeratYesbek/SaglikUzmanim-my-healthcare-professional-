@@ -18,8 +18,8 @@ import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.AppointmentManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.CommentManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Appointment;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Comment;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseAppointmentDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseCommentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.AppointmentDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.CommentDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
 import com.squareup.picasso.Picasso;
@@ -137,7 +137,7 @@ public class AfterJitsiMeetingConference {
 
 
     private void updateAppointment() {
-        AppointmentManager appointmentManager = new AppointmentManager(new FireBaseAppointmentDal());
+        AppointmentManager appointmentManager = new AppointmentManager(new AppointmentDal());
 
         Appointment appointment = new Appointment();
         appointment.set_documentID(_documentID);
@@ -157,7 +157,7 @@ public class AfterJitsiMeetingConference {
     }
 
     private void sendPointAndComment() {
-        CommentManager commentManager = new CommentManager(new FireBaseCommentDal());
+        CommentManager commentManager = new CommentManager(new CommentDal());
 
         Comment comment = new Comment();
         comment.set_comment(_comment);

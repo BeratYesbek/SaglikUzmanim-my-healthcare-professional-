@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityUser.ProfileEditActivityForUser;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
 import com.squareup.picasso.Picasso;
@@ -87,7 +87,7 @@ public class ProfileFragmentForUser extends Fragment {
 
     public void getUserProfileData() {
 
-        UserManager userManager = new UserManager(new FireBaseUserDal());
+        UserManager userManager = new UserManager(new UserDal());
         userManager.getData(null, new IGetUserListener() {
             @Override
             public void onSuccess(ArrayList<User> userArrayList) {

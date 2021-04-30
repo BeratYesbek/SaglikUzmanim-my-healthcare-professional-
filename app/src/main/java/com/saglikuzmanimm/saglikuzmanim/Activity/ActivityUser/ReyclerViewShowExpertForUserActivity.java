@@ -22,17 +22,17 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.OtherAdapters.AdapterShowExpertToUser;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ExpertManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Collection;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Expert;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseExpertDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ExpertDal;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.CollectionExpertFragment;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceDoctorDepartmantFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetExpertListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.SingleChoiceLister;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -177,7 +177,7 @@ public class ReyclerViewShowExpertForUserActivity extends AppCompatActivity impl
             Collection collection = new Collection();
             collection.setDepartment(choiceDepartment);
 
-            ExpertManager expertManager = new ExpertManager(new FireBaseExpertDal());
+            ExpertManager expertManager = new ExpertManager(new ExpertDal());
             expertManager.getAllExpert(collection, new IGetExpertListener() {
                 @Override
                 public void onSuccess(ArrayList<Expert> expertArrayList) {

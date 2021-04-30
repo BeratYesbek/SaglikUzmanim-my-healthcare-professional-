@@ -3,29 +3,29 @@ package com.saglikuzmanimm.saglikuzmanim.Business.Concrete;
 import com.saglikuzmanimm.saglikuzmanim.Business.Abstract.IUserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
 import com.saglikuzmanimm.saglikuzmanim.DataAccess.Abstract.IUserDal;
-import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetQueryListener;
+import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetUserListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IGetListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 
 public class UserManager implements IUserManager<User, IResult, IGetListener> {
 
-    private IUserDal _iUserDal;
+    private IUserDal _userDal;
 
-    public UserManager(IUserDal iUserDal) {
-        this._iUserDal = iUserDal;
+    public UserManager(IUserDal userDal) {
+        this._userDal = userDal;
     }
 
 
     @Override
     public void getAllUserQuery(IGetQueryListener iGetQueryListener) {
-        _iUserDal.getAllUserQuery(iGetQueryListener);
+        _userDal.getAllUserQuery(iGetQueryListener);
     }
 
 
     @Override
     public void updateUserProfile(User entity, IResult iResult) {
-        _iUserDal.updateUserProfile(entity,iResult);
+        _userDal.updateUserProfile(entity,iResult);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class UserManager implements IUserManager<User, IResult, IGetListener> {
 
     @Override
     public void createUserAccount(User entity, IResult iResult) {
-        _iUserDal.createUserAccount(entity,iResult );
+        _userDal.createUserAccount(entity,iResult );
 
     }
 
@@ -45,7 +45,7 @@ public class UserManager implements IUserManager<User, IResult, IGetListener> {
 
     @Override
     public void updateData(User entity, IResult iResult) {
-        _iUserDal.updateData(entity, iResult);
+        _userDal.updateData(entity, iResult);
     }
 
     @Override
@@ -55,6 +55,6 @@ public class UserManager implements IUserManager<User, IResult, IGetListener> {
 
     @Override
     public void getData(User entity, IGetUserListener iGetListener) {
-        _iUserDal.getData(entity, iGetListener);
+        _userDal.getData(entity, iGetListener);
     }
 }

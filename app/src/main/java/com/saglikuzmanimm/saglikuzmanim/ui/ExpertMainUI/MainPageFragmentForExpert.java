@@ -21,20 +21,20 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.saglikuzmanimm.saglikuzmanim.Activity.ActivityExpert.FragmentActivityForExpert;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.JobAdvertisementAdapter.AdapterDisplayJobAdvertisementToExpert;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.JobAdvertisementManager;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.JobAdvertisement;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseJobAdvertisementDal;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.JobAdvertisementDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceLocationFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetJobAdvertisementListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetQueryListener;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -131,7 +131,7 @@ public class MainPageFragmentForExpert extends Fragment {
         JobAdvertisement jobAdvertisement = new JobAdvertisement();
         jobAdvertisement.set_job_advertisement_department(department);
         jobAdvertisement.set_job_advertisement_location(location);
-        JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new FireBaseJobAdvertisementDal());
+        JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new JobAdvertisementDal());
         jobAdvertisementManager.getJobAdvertisementByLocationAndDepartment(location,department, new IGetJobAdvertisementListener() {
             @Override
             public void onSuccess(ArrayList<JobAdvertisement> jobAdvertisementArrayList) {
@@ -159,7 +159,7 @@ public class MainPageFragmentForExpert extends Fragment {
     public static void getUser() {
 
 
-        UserManager userManager = new UserManager(new FireBaseUserDal());
+        UserManager userManager = new UserManager(new UserDal());
         userManager.getAllUserQuery(new IGetQueryListener() {
             @Override
             public void onSuccess(QuerySnapshot queryDocument) {

@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.JobAdvertisementManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.JobAdvertisement;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseJobAdvertisementDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.JobAdvertisementDal;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceExpertFragment;
 import com.saglikuzmanimm.saglikuzmanim.Fragment.SingleChoiceFragment.SingleChoiceLocationFragment;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
@@ -92,7 +92,7 @@ public class JobAdvertisementUpdateActivity extends AppCompatActivity implements
     }
     void updateJobAdvertisement(String title,String explanation ){
 
-        JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new FireBaseJobAdvertisementDal());
+        JobAdvertisementManager jobAdvertisementManager = new JobAdvertisementManager(new JobAdvertisementDal());
 
         JobAdvertisement jobAdvertisement = new JobAdvertisement(title, explanation, department, location, null, null, documentID, null);
 

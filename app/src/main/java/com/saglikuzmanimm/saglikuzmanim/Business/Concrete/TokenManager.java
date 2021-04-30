@@ -7,14 +7,14 @@ import com.saglikuzmanimm.saglikuzmanim.DataAccess.Abstract.ITokenDal;
 
 public class TokenManager implements ITokenManager {
 
-    private ITokenDal _iTokenDal;
+    private ITokenDal _tokenDal;
 
-    public TokenManager(ITokenDal iTokenDal ) {
-        this._iTokenDal = iTokenDal;
+    public TokenManager(ITokenDal tokenDal) {
+        this._tokenDal = tokenDal;
     }
 
     @Override
     public void getToken(Context context,String collection) {
-        _iTokenDal.getToken(context,collection);
+        _tokenDal.getToken(context,collection);
     }
 }

@@ -18,15 +18,15 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.saglikuzmanimm.saglikuzmanim.Adapter.AdapterMessages.AdapterShowMessages;
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.ChatManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.Chat;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseChatDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.ChatDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.GetData.IGetChatListener;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.Notification.ChatSendNotification;
 import com.saglikuzmanimm.saglikuzmanim.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -125,7 +125,7 @@ public class MessageActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        ChatManager chatManager = new ChatManager(new FireBaseChatDal());
+        ChatManager chatManager = new ChatManager(new ChatDal());
         chatManager.seenMessages(receiverID);
 
     }
@@ -137,7 +137,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
-        ChatManager chatManager = new ChatManager(new FireBaseChatDal());
+        ChatManager chatManager = new ChatManager(new ChatDal());
         chatManager.getData(new Chat(senderID,receiverID), new IGetChatListener() {
             @Override
             public void onSuccess(ArrayList<Chat> chatArrayList) {
@@ -183,7 +183,7 @@ public class MessageActivity extends AppCompatActivity {
                 String messageID = uuid.toString();
                 editText_message_activity.getText().clear();
                 sendNotification(message);
-                ChatManager chatManager = new ChatManager(new FireBaseChatDal());
+                ChatManager chatManager = new ChatManager(new ChatDal());
                 chatManager.addData(new Chat(message, messageID, receiverID, senderID, formatter.format(date), false), new IResult() {
                     @Override
                     public void onSuccess() {

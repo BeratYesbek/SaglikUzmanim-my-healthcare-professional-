@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat;
 
 import com.saglikuzmanimm.saglikuzmanim.Business.Concrete.UserManager;
 import com.saglikuzmanimm.saglikuzmanim.Concrete.User;
-import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.FireBaseDataBase.FireBaseUserDal;
+import com.saglikuzmanimm.saglikuzmanim.DataAccess.Concrete.UserDal;
 import com.saglikuzmanimm.saglikuzmanim.Interfaces.IResult;
 import com.saglikuzmanimm.saglikuzmanim.R;
 import com.squareup.picasso.Picasso;
@@ -89,7 +89,7 @@ public class ProfileEditActivityForUser extends AppCompatActivity {
             progressBar_edit_profile.setVisibility(View.VISIBLE);
 
 
-            UserManager userManager = new UserManager(new FireBaseUserDal());
+            UserManager userManager = new UserManager(new UserDal());
             userManager.updateUserProfile(new User(_firstName, _lastName, imageData), new IResult() {
                 @Override
                 public void onSuccess() {
