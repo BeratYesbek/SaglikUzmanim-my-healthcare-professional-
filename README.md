@@ -1,7 +1,7 @@
 # SaglikUzmanim
                                               
                                               
-                                              SAĞLIK UZMANIM  - MY HEALTH EXPERT
+                                              SAĞLIK UZMANIM  - My Healthcare Professional
 
 
 WARNING: 
